@@ -19,6 +19,10 @@ function App() {
           shadows
           dpr={[1, 2]} // Balanced for quality vs stability
           camera={{ position: [0, 0, 15], fov: 35 }}
+          onCreated={({ gl }) => {
+            console.log('Canvas Created Successfully', gl.getContext());
+            if (!gl.getContext()) console.error('WebGL Context failed to initialize');
+          }}
           gl={{ 
             antialias: true, 
             stencil: false,

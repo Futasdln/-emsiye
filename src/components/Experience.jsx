@@ -38,11 +38,15 @@ const Experience = () => {
 
       <color attach="background" args={['#080808']} />
       
-      <ambientLight intensity={0.6} />
+      <directionalLight position={[5, 5, 5]} intensity={2} color="#ffffff" />
       
-      <Suspense fallback={null}>
+      <Suspense fallback={<directionalLight intensity={1} color="#ffffff" />}>
         {/* PREMIUM STUDIO REFLECTIONS (Background Hidden) */}
-        <Environment preset="studio" blur={1} />
+        <Environment 
+          preset="studio" 
+          blur={1} 
+          onLoad={() => console.log('Environment Loaded Successfully')}
+        />
       </Suspense>
 
       {/* ── PROFESSIONAL STUDIO RIG (Clean Mirror Steel) ─────────── */}
