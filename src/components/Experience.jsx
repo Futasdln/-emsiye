@@ -1,97 +1,120 @@
-import React, { useRef, Suspense } from 'react'
+import { useRef, Suspense } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { useScroll, PerspectiveCamera, Environment, SpotLight, ContactShadows } from '@react-three/drei'
+import { useScroll, PerspectiveCamera, Environment, ContactShadows } from '@react-three/drei'
 import * as THREE from 'three'
 import Product from './Product'
+import Rain from './Rain'
+
+// Kamera keyframe'leri
+const KF = [
+  { at: 0.000, pos: [1.8,  0.8,  9.5], look: [0,  0.2,  0] },
+  { at: 0.125, pos: [0.4,  2.8,  6.0], look: [0,  2.2,  0] },
+  { at: 0.250, pos: [-3.5, 0.8,  7.0], look: [0,  0.5,  0] },
+  { at: 0.375, pos: [2.8,  1.4,  6.5], look: [0,  1.2,  0] },
+  { at: 0.500, pos: [-2.0, 1.0,  7.5], look: [0,  0.8,  0] },
+  { at: 0.625, pos: [1.2, -2.2,  6.0], look: [0, -1.5,  0] },
+  { at: 0.750, pos: [0,   -4.0,  8.0], look: [0, -2.5,  0] },
+  { at: 0.875, pos: [0,    0.0, 10.5], look: [0,  0.0,  0] },
+]
+
+function getKF(offset) {
+  let a = KF[KF.length - 2], b = KF[KF.length - 1]
+  for (let i = 0; i < KF.length - 1; i++) {
+    if (offset >= KF[i].at && offset < KF[i + 1].at) {
+      a = KF[i]; b = KF[i + 1]; break
+    }
+  }
+  const range = b.at - a.at
+  const t = range < 0.0001 ? 1 : THREE.MathUtils.clamp((offset - a.at) / range, 0, 1)
+  const s = THREE.MathUtils.smoothstep(t, 0, 1)
+  return {
+    pos:  [a.pos[0]  + (b.pos[0]  - a.pos[0])  * s,
+           a.pos[1]  + (b.pos[1]  - a.pos[1])  * s,
+           a.pos[2]  + (b.pos[2]  - a.pos[2])  * s],
+    look: [a.look[0] + (b.look[0] - a.look[0]) * s,
+           a.look[1] + (b.look[1] - a.look[1]) * s,
+           a.look[2] + (b.look[2] - a.look[2]) * s],
+  }
+}
 
 const Experience = () => {
-  const scroll = useScroll()
-  const cameraRef = useRef()
+  const scrollData = useScroll()
+  const cameraRef  = useRef()
+
+  // Module-level vektörler yerine useRef — HMR güvenli
+  const camGoal     = useRef(new THREE.Vector3(1.8, 0.8, 9.5))
+  const lookGoal    = useRef(new THREE.Vector3(0, 0.2, 0))
+  const lookCurrent = useRef(new THREE.Vector3(0, 0.2, 0))
 
   useFrame((state, delta) => {
-    const offset = scroll.offset
-    if (cameraRef.current) {
-        // CINEMATIC 'AVM' CINEMATOGRAPHY
-        // Adjusted to avoid overlapping with text boxes in Overlay
-        let targetX = 0; let targetY = 0; let targetZ = 16 
-        
-        if (offset < 0.2) {
-            targetX = 1.8; targetY = -0.6; targetZ = 15 // Side framing for hero
-        } else if (offset < 0.45) {
-            targetX = 4.5; targetY = 2.0; targetZ = 18 // Turbine focus
-        } else if (offset < 0.75) {
-            targetX = -5.0; targetY = 0.5; targetZ = 14 // Dome clarity
-        } else {
-            targetX = 0; targetY = -5.5 ; targetZ = 13 // Tank Ejection reveal
-        }
+    if (!cameraRef.current) return
+    const dt     = Math.min(delta, 0.05)
+    const offset = scrollData.offset
+    const t      = state.clock.getElapsedTime()
 
-        cameraRef.current.position.lerp(new THREE.Vector3(targetX, targetY, targetZ), 0.05)
-        cameraRef.current.lookAt(0, offset > 0.88 ? -4.5 : 0, 0)
-    }
+    const kf = getKF(offset)
+
+    const breathX = Math.sin(t * 0.28) * 0.06
+    const breathY = Math.cos(t * 0.22) * 0.04
+
+    camGoal.current.set(kf.pos[0] + breathX, kf.pos[1] + breathY, kf.pos[2])
+    cameraRef.current.position.lerp(camGoal.current, dt * 2.8)
+
+    lookGoal.current.set(kf.look[0], kf.look[1], kf.look[2])
+    lookCurrent.current.lerp(lookGoal.current, dt * 3.2)
+    cameraRef.current.lookAt(lookCurrent.current)
   })
 
   return (
     <>
-      {/* 25 FOV: Professional Narrow Lens */}
-      <PerspectiveCamera makeDefault ref={cameraRef} position={[2, 0, 18]} fov={25} />
-      
+      <PerspectiveCamera makeDefault ref={cameraRef} position={[1.8, 0.8, 9.5]} fov={42} />
 
-      <color attach="background" args={['#080808']} />
-      
-      <directionalLight position={[5, 5, 5]} intensity={2} color="#ffffff" />
-      
-      <Suspense fallback={<directionalLight intensity={1} color="#ffffff" />}>
-        {/* PREMIUM STUDIO REFLECTIONS (Background Hidden) */}
-        <Environment 
-          preset="studio" 
-          blur={1} 
-          onLoad={() => console.log('Environment Loaded Successfully')}
-        />
+      <color attach="background" args={['#030608']} />
+
+      <Suspense fallback={null}>
+        <Environment preset="studio" blur={0.8} />
       </Suspense>
 
-      {/* ── PROFESSIONAL STUDIO RIG (Clean Mirror Steel) ─────────── */}
-      
-      {/* KEY LIGHT (Top Right) */}
-      <SpotLight
-        position={[40, 50, 40]}
-        angle={0.3}
-        penumbra={1}
-        intensity={8000}
+      {/* ── KEY LIGHT ── */}
+      <directionalLight
+        position={[10, 14, 8]}
+        intensity={2.8}
         color="#ffffff"
         castShadow
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
+        shadow-camera-near={0.5}
+        shadow-camera-far={60}
+        shadow-camera-left={-12}
+        shadow-camera-right={12}
+        shadow-camera-top={12}
+        shadow-camera-bottom={-12}
+        shadow-bias={-0.0005}
       />
 
-      {/* FILL LIGHT (Left Front) */}
-      <SpotLight
-        position={[-30, 20, 25]}
-        angle={0.6}
-        intensity={3000}
-        color="#ffffff"
+      {/* ── FILL (soğuk mavi) ── */}
+      <directionalLight position={[-8, 4, 6]} intensity={0.9} color="#90B8E8" />
+
+      {/* ── RIM (arka kenar) ── */}
+      <directionalLight position={[0, 6, -12]} intensity={2.0} color="#ffffff" />
+
+      {/* ── GROUND BOUNCE ── */}
+      <directionalLight position={[0, -18, 8]} intensity={0.5} color="#D8EEFF" />
+
+      {/* ── PRODUCT ACCENT ── */}
+      <pointLight position={[0, 0, 5]} intensity={25} color="#ffffff" distance={12} decay={2} />
+
+      <ContactShadows
+        position={[0, -3.8, 0]}
+        opacity={0.5}
+        scale={20}
+        blur={2.5}
+        far={12}
+        resolution={512}
+        color="#000020"
       />
 
-      {/* RIM LIGHT (Back Edge Highlight) */}
-      <SpotLight
-          position={[0, 15, -20]}
-          intensity={2000}
-          color="#ffffff"
-      />
-
-      {/* GROUND BOUNCE */}
-      <directionalLight position={[0, -25, 12]} intensity={2.0} color="#ffffff" />
-
-      {/* MODULAR EJECT FOCUS */}
-      <pointLight position={[0, -6, 6]} intensity={600} color="#00ffff" />
-
-      <ContactShadows 
-        position={[0, -3.2, 0]} 
-        opacity={0.7} 
-        scale={40} 
-        blur={1.5} 
-        far={15} 
-        resolution={1024} 
-        color="#000000"
-      />
-
+      <Rain />
       <Product />
     </>
   )

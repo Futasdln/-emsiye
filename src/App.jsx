@@ -35,7 +35,7 @@ function App() {
         >
 
           
-          <ScrollControls pages={7} damping={0.2}>
+          <ScrollControls pages={8} damping={0.25}>
             <Experience />
             
             <Scroll html>
