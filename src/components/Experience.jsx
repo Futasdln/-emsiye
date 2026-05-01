@@ -37,7 +37,7 @@ function getKF(offset) {
   }
 }
 
-const Experience = () => {
+const Experience = ({ color }) => {
   const scrollData = useScroll()
   const cameraRef  = useRef()
 
@@ -67,9 +67,15 @@ const Experience = () => {
 
   return (
     <>
-      <PerspectiveCamera makeDefault ref={cameraRef} position={[1.8, 0.8, 9.5]} fov={42} />
+      <PerspectiveCamera 
+        makeDefault 
+        ref={cameraRef} 
+        position={[1.8, 0.8, 9.5]} 
+        fov={window.innerWidth < 768 ? 58 : 42} 
+      />
 
-      <color attach="background" args={['#030608']} />
+      <color attach="background" args={['#080c12']} />
+      <fog attach="fog" args={['#080c12', 10, 25]} />
 
       <Suspense fallback={null}>
         <Environment preset="studio" blur={0.8} />
@@ -115,7 +121,7 @@ const Experience = () => {
       />
 
       <Rain />
-      <Product />
+      <Product color={color} />
     </>
   )
 }

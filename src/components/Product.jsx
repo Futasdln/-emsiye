@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber'
 import { useScroll, Text } from '@react-three/drei'
 import * as THREE from 'three'
 
-const Product = () => {
+const Product = ({ color = '#dde2e8' }) => {
   const scroll = useScroll()
 
   const groupRef        = useRef()
@@ -236,15 +236,15 @@ const Product = () => {
       <group position={[0, 1.6, 0]}>
         <mesh castShadow>
           <cylinderGeometry args={[0.92, 0.92, 0.55, 64, 1, true]} />
-          <meshPhysicalMaterial color="#dde2e8" metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
+          <meshPhysicalMaterial color={color} metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
         </mesh>
         <mesh position={[0, 0.275, 0]} rotation={[Math.PI / 2, 0, 0]}>
           <torusGeometry args={[0.90, 0.024, 16, 64]} />
-          <meshPhysicalMaterial color="#dde2e8" metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
+          <meshPhysicalMaterial color={color} metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
         </mesh>
         <mesh position={[0, -0.275, 0]} rotation={[Math.PI / 2, 0, 0]}>
           <torusGeometry args={[0.90, 0.020, 16, 64]} />
-          <meshPhysicalMaterial color="#dde2e8" metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
+          <meshPhysicalMaterial color={color} metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
         </mesh>
         <mesh position={[0, 0.09, 0]}>
           <cylinderGeometry args={[0.87, 0.28, 0.36, 48, 1, true]} />
@@ -268,13 +268,13 @@ const Product = () => {
             </mesh>
             <mesh rotation={[Math.PI/2, 0, 0]}>
               <torusGeometry args={[0.12, 0.020, 8, 20]} />
-              <meshPhysicalMaterial color="#dde2e8" metalness={1} roughness={0.05} clearcoat={1} />
+              <meshPhysicalMaterial color={color} metalness={1} roughness={0.05} clearcoat={1} />
             </mesh>
             {turbineBlades.map((b, i) => (
               <group key={i} rotation={b.rotation}>
                 <mesh position={[0.56, 0, 0]} rotation={[0.35, 0, 0]}>
                   <boxGeometry args={[0.46, 0.010, 0.16]} />
-                  <meshPhysicalMaterial color="#dde2e8" metalness={1.0} roughness={0.05} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
+                  <meshPhysicalMaterial color={color} metalness={1.0} roughness={0.05} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
                 </mesh>
               </group>
             ))}
@@ -287,7 +287,7 @@ const Product = () => {
         {[-0.82, 0.82].map((xPos, i) => (
           <mesh key={i} position={[xPos, 0.26, 0]}>
             <cylinderGeometry args={[0.013, 0.013, 2.50, 12]} />
-            <meshPhysicalMaterial color="#dde2e8" metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
+            <meshPhysicalMaterial color={color} metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
           </mesh>
         ))}
         <group position={[0, 1.28, 0]}>
@@ -303,11 +303,11 @@ const Product = () => {
         </group>
         <mesh position={[0, 1.34, 0]}>
           <cylinderGeometry args={[0.92, 0.92, 0.055, 64]} />
-          <meshPhysicalMaterial color="#dde2e8" metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
+          <meshPhysicalMaterial color={color} metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
         </mesh>
         <mesh position={[0, -0.90, 0]}>
           <cylinderGeometry args={[0.94, 0.94, 0.055, 64]} />
-          <meshPhysicalMaterial color="#dde2e8" metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
+          <meshPhysicalMaterial color={color} metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
         </mesh>
         <mesh position={[0, 0.22, 0]}>
           <cylinderGeometry args={[0.85, 0.85, 2.22, 64, 1, true]} />
@@ -341,7 +341,7 @@ const Product = () => {
         </mesh>
         <mesh position={[0, -0.41, 0]}>
           <cylinderGeometry args={[0.94, 0.94, 0.14, 64]} />
-          <meshPhysicalMaterial color="#dde2e8" metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
+          <meshPhysicalMaterial color={color} metalness={1.0} roughness={0.04} clearcoat={1} clearcoatRoughness={0} envMapIntensity={3} />
         </mesh>
         {[0, 72, 144, 216, 288].map((deg, i) => (
           <mesh key={i} position={[Math.cos(deg*Math.PI/180)*0.72, -0.50, Math.sin(deg*Math.PI/180)*0.72]}>
@@ -424,7 +424,7 @@ const Product = () => {
         {/* Üstten geniş → alta doğru daralıyor, 8 segment = rib panelleri */}
         <mesh position={[0, -0.61, 0]}>
           <cylinderGeometry args={[0.145, 0.042, 1.42, 8]} />
-          <meshStandardMaterial color="#0d0d10" roughness={0.88} metalness={0.01} />
+          <meshStandardMaterial color={color} roughness={0.88} metalness={0.01} />
         </mesh>
 
         {/* 8 kaburga izi — TubeGeometry ile yüzeyde taperlanmış şerit */}
