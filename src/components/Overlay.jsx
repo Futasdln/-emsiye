@@ -1,6 +1,6 @@
 import { translations } from '../translations'
 
-const Overlay = ({ language }) => {
+const Overlay = ({ language, onOpenDossier }) => {
   const t = translations[language] || translations.tr
 
   return (
@@ -9,10 +9,25 @@ const Overlay = ({ language }) => {
       {/* ══ SECTION 0: HERO ══════════════════════════════════════════════ */}
       <section className="hero">
         <div className="content left">
-          <div className="hero-badge">{t.hero.badge}</div>
-          <h1>{t.hero.title.split(' ')[0]}<br />{t.hero.title.split(' ')[1]}</h1>
-          <p className="hero-sub">{t.hero.subtitle}</p>
-          <p className="hero-desc">{t.hero.desc}</p>
+          <div className="hero-badge reveal-container">
+            <span className="reveal-text">{t.hero.badge}</span>
+          </div>
+          <h1 className="masked-text">
+            <span className="reveal-container">
+              <span className="reveal-text">KAFM</span>
+            </span>
+            <span className="reveal-container">
+              <span className="reveal-text" style={{ animationDelay: '0.1s' }}>
+                ORIGI<span className="cut-letter">N</span>
+              </span>
+            </span>
+          </h1>
+          <p className="hero-sub reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.3s' }}>{t.hero.subtitle}</span>
+          </p>
+          <p className="hero-desc reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.4s' }}>{t.hero.desc}</span>
+          </p>
           <div className="scroll-indicator">{language === 'tr' ? 'KAYDIRARAK KEŞFEDİN ↓' : 'SCROLL TO EXPLORE ↓'}</div>
         </div>
       </section>
@@ -20,18 +35,37 @@ const Overlay = ({ language }) => {
       {/* ══ SECTION 1: PROBLEM ═══════════════════════════════════════════ */}
       <section className="feature dark-section">
         <div className="content right">
-          <div className="section-tag">{t.problem.tag}</div>
-          <h2>{t.problem.title.split(' ').slice(0, 2).join(' ')}<br />{t.problem.title.split(' ').slice(2).join(' ')}</h2>
-          <p>{t.problem.desc}</p>
+          <div className="section-tag reveal-container">
+            <span className="reveal-text">{t.problem.tag}</span>
+          </div>
+          <h2 className="masked-text reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.1s' }}>{t.problem.title}</span>
+          </h2>
+          <p className="reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.2s' }}>{t.problem.desc}</span>
+          </p>
           <div className="stat-row">
-            <div className="stat-item">
-              <div className="stat-number red">₺ 42M</div>
-              <div className="stat-label">{language === 'tr' ? 'Yıllık ortalama hukuki dava yükü' : 'Avg. annual legal lawsuit burden'}</div>
+            <div className="stat-item reveal-container">
+              <div className="stat-number red reveal-text" style={{ animationDelay: '0.3s' }}>₺ 42M</div>
+              <div className="stat-label reveal-text" style={{ animationDelay: '0.4s' }}>{t.problem.legal_risk}</div>
             </div>
-            <div className="stat-item">
-              <div className="stat-number orange">150+</div>
-              <div className="stat-label">{language === 'tr' ? 'Şikayet / Aylık (Ortalama AVM)' : 'Complaints / Month (Avg Mall)'}</div>
+            <div className="stat-item reveal-container">
+              <div className="stat-number orange reveal-text" style={{ animationDelay: '0.3s' }}>150+</div>
+              <div className="stat-label reveal-text" style={{ animationDelay: '0.4s' }}>{t.problem.complaints}</div>
             </div>
+          </div>
+
+          <div className="infographic-card" style={{ borderLeft: '4px solid #ff4444' }}>
+            <div className="stat-header">
+              <span className="stat-title">{t.problem.risk_title}</span>
+              <span className="stat-percent" style={{color:'#ff4444'}}>{t.problem.risk_status}</span>
+            </div>
+            <div className="progress-track" style={{background: 'rgba(255,68,68,0.1)'}}>
+              <div className="progress-fill" style={{ '--fill': '85%', background: '#ff4444' }}></div>
+            </div>
+            <p style={{fontSize:'0.8rem', marginTop:'1rem', color:'var(--dimmer)'}}>
+              {t.problem.risk_desc}
+            </p>
           </div>
         </div>
       </section>
@@ -39,13 +73,39 @@ const Overlay = ({ language }) => {
       {/* ══ SECTION 2: TEKNOLOJİ 01 ═════════════════════════════════════ */}
       <section className="feature">
         <div className="content left">
-          <div className="section-tag">{t.tech1.tag}</div>
-          <h2>{t.tech1.title.split(' ').slice(0, 1).join(' ')}<br />{t.tech1.title.split(' ').slice(1).join(' ')}</h2>
-          <p>{t.tech1.desc}</p>
+          <div className="section-tag reveal-container">
+            <span className="reveal-text">{t.tech1.tag}</span>
+          </div>
+          <h2 className="masked-text reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.1s' }}>{t.tech1.title}</span>
+          </h2>
+          <p className="reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.2s' }}>{t.tech1.desc}</span>
+          </p>
           <div className="tech-pills">
-            <span className="pill">{language === 'tr' ? 'Liability Kontrol' : 'Liability Control'}</span>
-            <span className="pill">{language === 'tr' ? 'Mıknatıs Kilidi' : 'Magnet Lock'}</span>
+            <span className="pill">RISK SHIELD</span>
+            <span className="pill">MAG-LOCK</span>
             <span className="pill">IP67</span>
+          </div>
+
+          <div className="infographic-card">
+            <div className="stat-header">
+              <span className="stat-title">{t.tech1.index}</span>
+              <span className="stat-percent">%99.8</span>
+            </div>
+            <div className="progress-track">
+              <div className="progress-fill" style={{ '--fill': '99.8%' }}></div>
+            </div>
+            <div className="gauge-container">
+              <div className="gauge-item">
+                <span className="stat-title" style={{fontSize:'0.65rem'}}>{t.tech1.safety}</span>
+                <div className="gauge-mini"><div className="gauge-mini-fill" style={{ '--fill': '100%' }}></div></div>
+              </div>
+              <div className="gauge-item">
+                <span className="stat-title" style={{fontSize:'0.65rem'}}>{t.tech1.stability}</span>
+                <div className="gauge-mini"><div className="gauge-mini-fill" style={{ '--fill': '95%' }}></div></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -53,25 +113,48 @@ const Overlay = ({ language }) => {
       {/* ══ SECTION 3: TEKNOLOJİ 02 ═════════════════════════════════════ */}
       <section className="feature dark-section">
         <div className="content right">
-          <div className="section-tag">{t.tech2.tag}</div>
-          <h2>120,000 RPM<br />{language === 'tr' ? 'ROI TÜRBİNİ' : 'ROI TURBINE'}</h2>
-          <p>{t.tech2.desc}</p>
+          <div className="section-tag reveal-container">
+            <span className="reveal-text">{t.tech2.tag}</span>
+          </div>
+          <h2 className="masked-text reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.1s' }}>{language === 'tr' ? '120.000 RPM TÜRBİN' : '120,000 RPM TURBINE'}</span>
+          </h2>
+          <p className="reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.2s' }}>{t.tech2.desc}</span>
+          </p>
           <div className="ui-metric">
-            <div className="metric-title">{language === 'tr' ? 'OPERASYONEL VERİMLİLİK' : 'OPERATIONAL EFFICIENCY'}</div>
+            <div className="metric-title">{t.tech2.analytics}</div>
             <div className="metric-row">
-              <span className="metric-key">{language === 'tr' ? 'Hız' : 'Speed'}</span>
-              <div className="metric-bar-container">
+              <div className="metric-bar-container tall">
                 <div className="metric-bar scan-animate-speed"></div>
               </div>
-              <span className="metric-val cyan">120K RPM</span>
             </div>
-            <div className="metric-row">
-              <span className="metric-key">{language === 'tr' ? 'Tasarruf' : 'Savings'}</span>
-              <div className="metric-bar-container">
-                <div className="metric-bar scan-animate-speed" style={{animationDuration: '2.2s'}}></div>
-              </div>
-              <span className="metric-val cyan">%35</span>
-            </div>
+            <div className="metric-value">120K RPM / %35 {t.tech2.savings_tag}</div>
+          </div>
+
+          <div className="infographic-card">
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th align="left" className="stat-title">{t.tech2.metric}</th>
+                  <th align="right" className="stat-title">{t.tech2.value}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="label">{t.tech2.energy}</td>
+                  <td className="value gain">A+++</td>
+                </tr>
+                <tr>
+                  <td className="label">{t.tech2.drying}</td>
+                  <td className="value">4.2s</td>
+                </tr>
+                <tr>
+                  <td className="label">{t.tech2.annual}</td>
+                  <td className="value gain">₺ 140K+</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -79,16 +162,44 @@ const Overlay = ({ language }) => {
       {/* ══ SECTION 4: BİOGÜVENLİK ══════════════════════════════════════ */}
       <section className="feature">
         <div className="content left">
-          <div className="section-tag">{t.tech3.tag}</div>
-          <h2>{language === 'tr' ? 'BİOGÜVENLİK' : 'BIO-SECURITY'}<br />{language === 'tr' ? 'STANDARTI' : 'STANDARD'}</h2>
-          <p>{t.tech3.desc}</p>
-          <div className="ring-container">
-            <div className="uv-ring"></div>
-            <div className="uv-text-container">
-              <div className="metric-title uv-label">{language === 'tr' ? 'PATOJEN İMHASI' : 'PATHOGEN DESTRUCTION'}</div>
-              <div className="uv-text">%99.9</div>
-              <div className="uv-sub">UV-C 254nm</div>
+          <div className="section-tag reveal-container">
+            <span className="reveal-text">{t.tech3.tag}</span>
+          </div>
+          <h2 className="masked-text reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.1s' }}>{language === 'tr' ? 'BİOGÜVENLİK ZIRHI' : 'BIO-SECURITY ARMOR'}</span>
+          </h2>
+          <p className="reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.2s' }}>{t.tech3.desc}</span>
+          </p>
+          
+          <div className="pulse-container">
+            <div className="pulse-core"></div>
+            <div className="pulse-wave" style={{animationDelay:'0s'}}></div>
+            <div className="pulse-wave" style={{animationDelay:'1s'}}></div>
+            <div className="pulse-wave" style={{animationDelay:'2s'}}></div>
+            <div className="uv-text-container" style={{marginTop:'120px'}}>
+              <div className="uv-text" style={{fontSize:'2rem'}}>%99.9</div>
+              <div className="uv-sub">UV-C STERILIZATION</div>
             </div>
+          </div>
+
+          <div className="infographic-card" style={{ borderLeft: '4px solid #00e5ff', marginTop:'4rem' }}>
+             <div className="stat-header">
+              <span className="stat-title">{t.tech3.status}</span>
+              <span className="stat-percent" style={{color:'#00e5ff'}}>{t.tech3.active}</span>
+            </div>
+            <table className="comparison-table">
+              <tbody>
+                <tr>
+                  <td className="label">{t.tech3.kill_rate}</td>
+                  <td className="value gain">99.9%</td>
+                </tr>
+                <tr>
+                  <td className="label">{t.tech3.exposure}</td>
+                  <td className="value">0.2s</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -96,15 +207,33 @@ const Overlay = ({ language }) => {
       {/* ══ SECTION 5: TASARIM ═══════════════════════════════════════════ */}
       <section className="feature dark-section">
         <div className="content right">
-          <div className="section-tag">{t.design.tag}</div>
-          <h2>{t.design.title.split(' ').slice(0, 2).join(' ')}<br />{t.design.title.split(' ').slice(2).join(' ')}</h2>
-          <p>{t.design.desc}</p>
-          <div className="ui-metric" style={{marginTop: '1.5rem'}}>
-            <div className="metric-title">{language === 'tr' ? 'VİZYONER MATERYAL' : 'VISIONARY MATERIAL'}</div>
-            <div className="metric-bar-container">
-              <div className="metric-bar scan-animate-steel"></div>
+          <div className="section-tag reveal-container">
+            <span className="reveal-text">{t.design.tag}</span>
+          </div>
+          <h2 className="masked-text reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.1s' }}>{t.design.title}</span>
+          </h2>
+          <p className="reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.2s' }}>{t.design.desc}</span>
+          </p>
+          
+          <div className="infographic-card">
+            <div className="stat-header">
+              <span className="stat-title">{t.design.material_title}</span>
+              <span className="stat-percent">316L</span>
             </div>
-            <div className="metric-value">100% {language === 'tr' ? 'BOROSİLİKAT + ÇELİK' : 'BOROSILICATE + STEEL'}</div>
+            <div className="gauge-container">
+              <div className="gauge-item">
+                <span className="stat-title" style={{fontSize:'0.65rem'}}>{t.design.glass}</span>
+                <p style={{fontSize:'0.7rem', color:'var(--dimmer)'}}>{t.design.glass_desc}</p>
+                <div className="gauge-mini"><div className="gauge-mini-fill" style={{ '--fill': '100%', background:'var(--white)' }}></div></div>
+              </div>
+              <div className="gauge-item">
+                <span className="stat-title" style={{fontSize:'0.65rem'}}>{t.design.steel}</span>
+                <p style={{fontSize:'0.7rem', color:'var(--dimmer)'}}>{t.design.steel_desc}</p>
+                <div className="gauge-mini"><div className="gauge-mini-fill" style={{ '--fill': '100%', background:'var(--white)' }}></div></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -112,76 +241,61 @@ const Overlay = ({ language }) => {
       {/* ══ SECTION 6: SU HAZNESİ ════════════════════════════════════════ */}
       <section className="feature">
         <div className="content left">
-          <div className="section-tag">{t.capacity.tag}</div>
-          <h2>MAG-SAFE<br />{language === 'tr' ? 'ULTRA KAPASİTE' : 'ULTRA CAPACITY'}</h2>
-          <p>{t.capacity.desc}</p>
-          <div className="ui-metric water-card">
-            <div className="metric-title cyan-label">{language === 'tr' ? 'HAZNE ANALİTİĞİ' : 'TANK ANALYTICS'}</div>
-            <div className="water-stats">
-              <div className="water-stat">
-                <div className="water-val">2.5L</div>
-                <div className="water-key">{language === 'tr' ? 'Hacim' : 'Volume'}</div>
-              </div>
-              <div className="water-stat">
-                <div className="water-val">2000+</div>
-                <div className="water-key">{language === 'tr' ? 'Ziyaretçi' : 'Visitors'}</div>
-              </div>
+          <div className="section-tag reveal-container">
+            <span className="reveal-text">{t.capacity.tag}</span>
+          </div>
+          <h2 className="masked-text reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.1s' }}>{language === 'tr' ? 'ULTRA KAPASİTE' : 'ULTRA CAPACITY'}</span>
+          </h2>
+          <p className="reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.2s' }}>{t.capacity.desc}</span>
+          </p>
+          
+          <div className="infographic-card">
+            <div className="stat-header">
+              <span className="stat-title">{t.capacity.tank}</span>
+              <span className="stat-percent">{t.capacity.volume}</span>
             </div>
+            <div className="progress-track" style={{height:'10px'}}>
+              <div className="progress-fill" style={{ '--fill': '65%', background: 'linear-gradient(90deg, #0099ff, #00e5ff)' }}></div>
+            </div>
+            <p style={{fontSize:'0.85rem', marginTop:'1.2rem', color:'var(--dimmer)', fontStyle:'italic'}}>
+              {t.capacity.optimized}
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ══ SECTION 7: ROI DASHBOARD (RESTORED) ══════════════════════════ */}
+      {/* ══ SECTION 7: ROI DASHBOARD ══════════════════════════════════════ */}
       <section className="feature dark-section dashboard">
         <div className="content center wide">
-          <div className="section-tag center-tag">{t.roi.tag}</div>
-          <h2 className="center-h2">{t.roi.title}</h2>
-          <p className="center-p">{t.roi.desc}</p>
+          <div className="section-tag center-tag reveal-container">
+            <span className="reveal-text">{t.roi.tag}</span>
+          </div>
+          <h2 className="center-h2 masked-text reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.1s' }}>{t.roi.title}</span>
+          </h2>
+          <p className="center-p reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.2s' }}>{t.roi.desc}</span>
+          </p>
           
           <div className="roi-grid">
             <div className="roi-card">
-              <div className="roi-icon">⚠</div>
-              <div className="roi-title">{language === 'tr' ? 'KAZA & KAYMA RİSKİ' : 'SLIP & FALL RISK'}</div>
-              <div className="roi-bar-container">
-                <div className="roi-bar slip-risk"></div>
-              </div>
+              <div className="roi-title">{t.roi.risk_mgt}</div>
               <div className="roi-value green">%0</div>
-              <div className="roi-sub">{language === 'tr' ? 'Liability Eliminasyonu' : 'Liability Elimination'}</div>
+              <div className="roi-sub">LIABILITY</div>
             </div>
 
             <div className="roi-card featured-card">
-              <div className="roi-icon gold">★</div>
-              <div className="roi-title">{language === 'tr' ? 'KURUMSAL PRESTİJ' : 'CORPORATE PRESTIGE'}</div>
-              <div className="roi-bar-container">
-                <div className="roi-bar profit"></div>
-              </div>
-              <div className="roi-value gold">MAKSİMUM</div>
-              <div className="roi-sub">{language === 'tr' ? 'A+ Müşteri Memnuniyeti' : 'A+ Customer Satisfaction'}</div>
+              <div className="roi-title">{t.roi.payback}</div>
+              <div className="roi-value gold">14 {language === 'tr' ? 'AY' : 'MOS'}</div>
+              <div className="roi-sub">PAYBACK</div>
             </div>
 
             <div className="roi-card">
-              <div className="roi-icon cyan">⬡</div>
-              <div className="roi-title">{language === 'tr' ? 'KARBON AYAK İZİ' : 'CARBON FOOTPRINT'}</div>
-              <div className="ring-container mini">
-                <div className="eco-ring"></div>
-                <div className="uv-text eco-zero">0G</div>
-              </div>
-              <div className="roi-sub">{language === 'tr' ? 'Sıfır Plastik Atık' : 'Zero Plastic Waste'}</div>
-            </div>
-          </div>
-
-          <div className="roi-bottom-stats">
-            <div className="bottom-stat">
-              <span className="bstat-num">₺ 280K+</span>
-              <span className="bstat-label">{language === 'tr' ? '5 Yıllık Tasarruf Tahmini' : '5 Year Savings Projection'}</span>
-            </div>
-            <div className="bottom-stat">
-              <span className="bstat-num">ROI %340</span>
-              <span className="bstat-label">{language === 'tr' ? 'Amortisman Süresi (14 Ay)' : 'Payback Period (14 Mos)'}</span>
-            </div>
-            <div className="bottom-stat">
-              <span className="bstat-num">A+</span>
-              <span className="bstat-label">{language === 'tr' ? 'ISO 14001 Çevre Standartı' : 'ISO 14001 Environmental Std'}</span>
+              <div className="roi-title">{t.roi.sustainability}</div>
+              <div className="roi-value cyan">A+</div>
+              <div className="roi-sub">ECO-RATING</div>
             </div>
           </div>
         </div>
@@ -190,11 +304,38 @@ const Overlay = ({ language }) => {
       {/* ══ SECTION 8: CTA ═══════════════════════════════════════════════ */}
       <section className="cta">
         <div className="content center cta-content">
-          <div className="section-tag center-tag">{t.cta.tag}</div>
-          <h2 className="cta-h2">{t.cta.title.split(' ').slice(0, 2).join(' ')}<br />{t.cta.title.split(' ').slice(2).join(' ')}</h2>
-          <p className="cta-p">{t.cta.desc}</p>
+          <div className="section-tag center-tag reveal-container">
+            <span className="reveal-text">{t.cta.tag}</span>
+          </div>
+          <h2 className="cta-h2 masked-text reveal-container">
+            <span className="reveal-text" style={{ animationDelay: '0.1s' }}>{t.cta.title}</span>
+          </h2>
+          <p className="cta-p reveal-container" style={{ marginBottom: '3rem' }}>
+            <span className="reveal-text" style={{ animationDelay: '0.2s' }}>{t.cta.desc}</span>
+          </p>
           <div className="cta-buttons">
-            <button className="order-button primary">{t.cta.button}</button>
+            <button className="order-button primary" onClick={onOpenDossier}>
+              {t.cta.button}
+            </button>
+          </div>
+
+          <div className="infographic-card" style={{ maxWidth: '450px', margin: '4rem auto 0', textAlign:'left' }}>
+            <div className="stat-header">
+              <span className="stat-title">{t.cta.global}</span>
+              <span className="stat-percent">A+ EXCELLENCE</span>
+            </div>
+            <table className="comparison-table">
+              <tbody>
+                <tr>
+                  <td className="label">{t.cta.efficiency}</td>
+                  <td className="value gain">+%94</td>
+                </tr>
+                <tr>
+                  <td className="label">{t.cta.maintenance}</td>
+                  <td className="value loss">-%85</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import { ScrollControls, Scroll } from '@react-three/drei'
 import Experience from './components/Experience'
 import Overlay from './components/Overlay'
+import InvestmentDossier from './components/InvestmentDossier'
 
 const Loader = () => (
     <div className="v-loader">
@@ -29,6 +30,9 @@ const colors = [
 function App() {
   const [language, setLanguage] = useState('tr');
   const [productColor, setProductColor] = useState(colors[0]);
+  const [showDossier, setShowDossier] = useState(false);
+
+  const toggleDossier = () => setShowDossier(!showDossier);
 
   return (
     <div style={{ width: '100vw', height: '100vh', background: '#010101' }}>
@@ -71,14 +75,16 @@ function App() {
           }}
           style={{ position: 'fixed', top: 0, left: 0 }}
         >
-          <ScrollControls pages={8} damping={0.25}>
+          <ScrollControls pages={9} damping={0.15} infinite={false}>
             <Experience color={productColor.hex} />
             <Scroll html>
-              <Overlay language={language} />
+              <Overlay language={language} onOpenDossier={toggleDossier} />
             </Scroll>
           </ScrollControls>
         </Canvas>
       </Suspense>
+
+      {showDossier && <InvestmentDossier language={language} onClose={toggleDossier} />}
     </div>
   )
 }
