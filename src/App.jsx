@@ -20,11 +20,11 @@ const langs = [
 ];
 
 const colors = [
-  { id: 'black',  hex: '#0a0a0a', label: 'Onyx' },
-  { id: 'blue',   hex: '#002244', label: 'Space Blue' },
-  { id: 'pink',   hex: '#d48888', label: 'Rose' },
-  { id: 'silver', hex: '#8e8e93', label: 'Titanium' },
-  { id: 'gold',   hex: '#b5935b', label: 'Gold' }
+  { id: 'black',  hex: '#0a0a0a', bg: '#080c12', label: 'Onyx' },
+  { id: 'blue',   hex: '#002244', bg: '#000810', label: 'Space Blue' },
+  { id: 'pink',   hex: '#d48888', bg: '#150a0a', label: 'Rose' },
+  { id: 'silver', hex: '#8e8e93', bg: '#0d0d0d', label: 'Titanium' },
+  { id: 'gold',   hex: '#b5935b', bg: '#100a00', label: 'Gold' }
 ];
 
 function App() {
@@ -35,9 +35,7 @@ function App() {
   const toggleDossier = () => setShowDossier(!showDossier);
 
   return (
-    <div style={{ width: '100vw', height: '100vh', background: '#010101' }}>
-      
-      {/* UI OVERLAY CONTROLS */}
+    <div style={{ width: '100vw', height: '100vh' }}>
       <div className="ui-container">
         <div className="lang-switcher">
           {langs.map(l => (
@@ -65,18 +63,13 @@ function App() {
       </div>
 
       <Suspense fallback={<Loader />}>
-        <Canvas
-          shadows
+        <Canvas 
+          shadows 
           dpr={[1, 2]} 
-          camera={{ position: [0, 0, 15], fov: 35 }}
-          gl={{ 
-            antialias: true,
-            powerPreference: "high-performance",
-          }}
           style={{ position: 'fixed', top: 0, left: 0 }}
         >
-          <ScrollControls pages={9} damping={0.15} infinite={false}>
-            <Experience color={productColor.hex} />
+          <ScrollControls pages={10} damping={0.15} infinite={false}>
+            <Experience color={productColor.hex} bgColor={productColor.bg} />
             <Scroll html>
               <Overlay language={language} onOpenDossier={toggleDossier} />
             </Scroll>

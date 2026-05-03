@@ -1,9 +1,10 @@
-import { useRef, Suspense } from 'react'
+import { useRef, Suspense, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { useScroll, PerspectiveCamera, Environment, ContactShadows } from '@react-three/drei'
+import { useScroll, PerspectiveCamera, Environment, ContactShadows, Html } from '@react-three/drei'
 import * as THREE from 'three'
 import Product from './Product'
 import Rain from './Rain'
+import { translations } from '../translations'
 
 // Kamera keyframe'leri
 const KF = [
@@ -36,8 +37,7 @@ function getKF(offset) {
            a.look[2] + (b.look[2] - a.look[2]) * s],
   }
 }
-
-const Experience = ({ color }) => {
+const Experience = ({ color, bgColor }) => {
   const scrollData = useScroll()
   const cameraRef  = useRef()
 
@@ -74,14 +74,14 @@ const Experience = ({ color }) => {
         fov={window.innerWidth < 768 ? 58 : 42} 
       />
 
-      <color attach="background" args={['#080c12']} />
-      <fog attach="fog" args={['#080c12', 10, 25]} />
-
+      <color attach="background" args={[bgColor]} />
+      <fog attach="fog" args={[bgColor, 10, 25]} />
+      
       <Suspense fallback={null}>
-        <Environment preset="studio" blur={0.8} />
+        <Environment preset="studio" background={false} />
       </Suspense>
 
-      {/* ── KEY LIGHT ── */}
+      {/* ── LIGHTING ── */}
       <directionalLight
         position={[10, 14, 8]}
         intensity={2.8}
@@ -98,16 +98,9 @@ const Experience = ({ color }) => {
         shadow-bias={-0.0005}
       />
 
-      {/* ── FILL (soğuk mavi) ── */}
       <directionalLight position={[-8, 4, 6]} intensity={0.9} color="#90B8E8" />
-
-      {/* ── RIM (arka kenar) ── */}
       <directionalLight position={[0, 6, -12]} intensity={2.0} color="#ffffff" />
-
-      {/* ── GROUND BOUNCE ── */}
       <directionalLight position={[0, -18, 8]} intensity={0.5} color="#D8EEFF" />
-
-      {/* ── PRODUCT ACCENT ── */}
       <pointLight position={[0, 0, 5]} intensity={25} color="#ffffff" distance={12} decay={2} />
 
       <ContactShadows

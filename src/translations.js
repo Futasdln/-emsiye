@@ -1,199 +1,87 @@
 export const translations = {
   tr: {
-    hero: {
-      badge: "ELİT OPERASYONEL STANDART · 2025",
-      title: "KAFM ORIGIN",
-      subtitle: "GİRİŞTEKİ TEK PRESTİJ MÜHRÜ",
-      desc: "Görünmeyen maliyet kanamasını durdurun. Giriş kapınızda sadece şemsiyeleri değil, kurumunuzun liability risklerini ve marka imajını kontrol altına alan stratejik bir mühendislik şaheseri."
-    },
-    problem: {
-      tag: "STRATEJİK ZAFİYET",
-      title: "ISLAK ZEMİNLER: BİR FİNANSAL SAATLİ BOMBA",
-      desc: "Her yağmurlu gün, kontrolünüz dışındaki bir kazanın markanızı mahkemelere taşıma riskidir. Islak zeminler sadece bir temizlik sorunu değil; her yıl milyonlarca lira çalan 'sessiz bir kâr katili' ve marka itibarınızdaki en büyük çatlaktır.",
-      risk_title: "RİSK ANALİZİ",
-      risk_status: "KRİTİK",
-      risk_desc: "Kontrolsüz ıslak zeminler, kurumsal itibarınızda her ay ortalama 150+ şikayet noktası oluşturur.",
-      legal_risk: "Hukuki Risk Yükü",
-      complaints: "Şikayet / Aylık"
-    },
-    tech1: {
-      tag: "OPERASYONEL DOMİNASYON 01",
-      title: "RİSKİ SIFIRA İNDİREN KİLİT",
-      desc: "Manyetik hizalama teknolojisiyle suyu saniyeler içinde hapse mahkum edin. Giriş alanındaki kaosu ve kazaları %99.8 oranında yok ederek, işletmenizi hukuki tazminatların ve operasyonel zafiyetlerin ötesine taşıyın.",
-      index: "KORUMA ENDEKSİ",
-      safety: "GÜVENLİK",
-      stability: "STABİLİTE"
-    },
-    tech2: {
-      tag: "OPERASYONEL DOMİNASYON 02",
-      title: "120.000 RPM KAR MAKİNESİ",
-      desc: "Jet-Flow sadece kurutmaz, maliyetlerinizi hızla aşağı çeker. Temizlik ordularının ve atık malzemelerin yarattığı gizli giderleri yıllık bazda servete dönüştürün. Hızımız, prestijinizin kesintiye uğramamasını garantiler.",
-      analytics: "OPERASYONEL ANALİTİK",
-      savings_tag: "TASARRUF",
-      metric: "METRİK",
-      value: "DEĞER",
-      energy: "Enerji Verimliliği",
-      drying: "Kurutma Süresi",
-      annual: "Yıllık Tasarruf"
-    },
-    tech3: {
-      tag: "OPERASYONEL DOMİNASYON 03",
-      title: "PSİKOLOJİK HİJYEN KALKANI",
-      desc: "UV-C teknolojisiyle sadece suyu değil, bakteriyel korkuları da yok edin. Müşterilerinize sadece 'kuru' bir zemin değil, en üst düzeyde güven ve kontrol hissi verin. Güven, en büyük yatırımcıdır.",
-      status: "BİOGÜVENLİK DURUMU",
-      active: "AKTİF",
-      kill_rate: "Patojen İmha Oranı",
-      exposure: "Maruziyet Süresi"
-    },
-    design: {
-      tag: "MİMARİ OTORİTE",
-      title: "SÖZSÜZ BİR PRESTİJ BİLDİRİSİ",
-      desc: "Borosilikat cam ve çeliğin soğuk asaleti, kurumunuzun vizyoner gücünü haykırır. Bu bir şemsiye aracı değil; binanıza değer katan, müşterinin kurumsal gücünüzü hissettiği ilk fiziksel temastır.",
-      material_title: "MİMARİ MATERYAL",
-      glass: "CAM",
-      glass_desc: "Yüksek Dirençli Borosilikat",
-      steel: "ÇELİK",
-      steel_desc: "Marine Grade 316L"
-    },
-    capacity: {
-      tag: "KESİNTİSİZ GÜÇ",
-      title: "YÜKSEK TRAFİK HAKİMİYETİ",
-      desc: "Binlerce ziyaretçiyi yorulmadan karşılayan Mag-Safe teknolojisi. Bakım ekiplerini ve arıza risklerini sahadan silin. KAFM Origin, en yoğun günlerde bile sarsılmaz bir verimlilik kalesi olarak durur.",
-      tank: "TANK KAPASİTESİ",
-      volume: "2.5 LİTRE",
-      optimized: "1000+ kullanım için optimize edilmiştir."
-    },
-    roi: {
-      tag: "FİNANSAL DİREKTİF",
-      title: "YATIRIMIN ÖTESİNDE: ROI DOMİNASYONU",
-      desc: "KAFM Origin bir gider değil, operasyonel zırhınızdır. 14 ayda kendini amorti eden bu sistem, temizlik ve hukuk kalemlerindeki kanamayı durdurarak doğrudan kârlılığa hizmet eder.",
-      risk_mgt: "RİSK YÖNETİMİ",
-      payback: "GERİ DÖNÜŞ",
-      sustainability: "SÜRDÜRÜLEBİLİRLİK"
-    },
-    cta: {
-      tag: "KARAR ANI",
-      title: "RİSKİ YÖNETİN VEYA ONA MAHKUM OLUN",
-      desc: "Kurumsal geleceğinizi giriş kapısında sağlama alın. Ya bu teknolojiyle fark yaratın, ya da geleneksel maliyetlerin altında kalmaya devam edin.",
-      button: "YATIRIM DOSYASINI ŞİMDİ İNDİRİN",
-      global: "GLOBAL STANDART",
-      efficiency: "Verimlilik",
-      maintenance: "Bakım Gereksinimi"
-    }
+    common: { scrollExplore: "STRATEJİK ANALİZ İÇİN KAYDIRIN ↓", close: "Kapat", savePdf: "PDF OLARAK KAYDET", download: "İndir", requestAnalysis: "Tesis Risk Analizi Talep Et", cfoBrief: "CFO Brief'i İncele", bookDemo: "Kurumsal Demo Planla", globalStandard: "KÜRESEL STANDART", excellence: "MÜKEMMELLİK", monthsShort: "AY" },
+    category: { eyebrow: "ENTRANCE RISK INFRASTRUCTURE", title: "GİRİŞLER RİSK SIZDIRMAMALI.", subtitle: "KAFM ORIGIN, ticari giriş alanlarında ıslak zemin kaynaklı operasyonel, hukuki ve finansal riskleri kontrol altına almak için tasarlanmış kurumsal giriş risk altyapısıdır.", investorLine: "YATIRIM TEZİ: RİSK KONTROL ALTYAPISI", buyerLine: "OPERASYON: ÖLÇEBİLİR GÜVENLİK KATMANI" },
+    hero: { badge: "STRATEJİK ZİHNİYET", title: "ISLAK ZEMİN RİSK YÖNETİMİ", title1: "ISLAK ZEMİNLER", title2: "BİR FİNANSAL", title3: "SAATLİ BOMBA", subtitle: "RİSKİ TEKNOLOJİYLE YÖNETİN", desc: "KAFM ORIGIN, ticari girişlerde ıslak zemin maruziyetini yönetilebilir bir operasyonel kontrol katmanına dönüştürür." },
+    problem: { tag: "GÖRÜNMEYEN MALİYET", title: "ISLAK ZEMİN RİSKİ", desc: "Bir kayma vakası sadece kaza değildir; hukuki sorumluluk, şikayet yükselişi ve marka güveni kaybı yaratır.", legal_risk: "Hukuki Risk", complaints: "Müşteri Şikayeti", risk_title: "Risk Durumu", risk_status: "YÜKSEK", risk_desc: "Anlık zarar değil, sürekli maliyet" },
+    design: { tag: "ENDÜSTRİYEL TASARIM", title: "MALZEME VE DAYANIKLILIK MİMARİSİ", desc: "Premium giriş alanları için optik berraklık, yapısal güvenlik ve uzun ömür bir arada.", material_title: "Malzeme Mimarisi", glass: "BOROSİLİKAT", glass_desc: "Kimyasal dayanım ve optik stabilite", steel: "316L ÇELİK", steel_desc: "Yüksek korozyon direnci" },
+    tech2: { tag: "AKILLI ANALİTİK", title: "OPERASYONEL VERİYLE GÜVENLİK OPTİMİZASYONU", desc: "Cihaz performansı ve giriş yoğunluğu birlikte analiz edilerek enerji ve risk dengesi korunur.", analytics: "Gerçek zamanli performans analitiği", savings_tag: "Maliyet baskısını azaltan senaryo modelleri", metric: "Yıllık ROI ve risk göstergeleri", value: "Yönetim paneli entegrasyonu", energy: "ENERJİ KONTROLÜ", drying: "KURUTMA HIZI", annual: "YILLIK ETKİ RAPORU" },
+    tech3: { tag: "HİJYEN MOTORU", title: "UV-C DESTEKLİ AKTİF KORUMA", desc: "UV-C destekli sterilizasyon katmanı, giriş güvenliğini sadece kuru zeminle sınırlamaz.", status: "Sistem Durumu", active: "AKTİF", kill_rate: "Mikrobiyal Etki", exposure: "%99.9", },
+    capacity: { tag: "TRAFİK HAKİMİYETİ", title: "YÜKSEK TRAFİKTE İSTİKRAR", desc: "AVM, hastane, plaza ve otel gibi yoğun lokasyonlarda sürekli operasyon için tasarlandı.", tank: "MODÜLER TANK", volume: "YÜKSEK HACİM", optimized: "OPTİMİZE AKIŞ" },
+    trust: { title: "GÜVEN VE UYGULAMA ÇERÇEVESİ", subtitle: "Kurumsal ölçekte uygulama, bakım ve modelleme süreçleri tesis bazlı olarak tanımlanabilir.", installation: "Kurulum Akışı", maintenance: "Bakım ve Servis", service: "Planlı servis periyotları ve operasyon sürekliliği politikaları tanımlanabilir.", testing: "Pilot Program", certification: "Teknik doğrulama ve sertifikasyon yol haritası yatırım dosyasında yapılandırılır.", disclaimer: "Saha kurulum adımları tesis tipine göre projelendirilir." },
+    roi: { tag: "FİNANSAL DİREKTİF", title: "YATIRIMIN ÖTESİNDE ROI", desc: "KAFM ORIGIN bir cihaz değil; risk azaltımı, sigorta baskısı yönetimi ve operasyonel verimlilik sistemidir.", subtitle: "CFO okunabilir model", assumptionTitle: "ROI Varsayımları", assumptionTraffic: "Tesis trafiği", assumptionRain: "Yağış profili", assumptionIncident: "Olay geçmişi", assumptionCost: "Operasyonel maliyetler", modelNote: "ROI ve geri dönüş süresi; tesis trafiği, yağış profili, operasyon maliyetleri ve olay geçmişi gibi değişkenlere göre modellenir. Gösterilen değerler yatırım analizi senaryosu olarak değerlendirilmelidir." },
+    roiMetrics: { riskManagementLabel: "RİSK YÖNETİMİ", riskManagementValue: "%0", riskManagementCaption: "LIABILITY", paybackLabel: "GERİ DÖNÜŞ", paybackValue: "14", paybackCaption: "PAYBACK", sustainabilityLabel: "SÜRDÜRDÜLEBİLİRLİK", sustainabilityValue: "A+", sustainabilityCaption: "ECO-RATING" },
+    cta: { tag: "KARAR ANI", title: "RİSKİ YÖNETİN. MALİYETE DÖNÜŞMESİN.", desc: "KAFM ORIGIN, ticari girişlerde ıslak zemin kaynaklı riski görünür, modellenebilir ve yönetilebilir hale getirmek için tasarlandı.", primaryButton: "TESİS RİSK ANALİZİ TALEP ET", secondaryButton: "CFO BRIEF'İ İNCELE", global: "KÜRESEL STANDART", efficiency: "OPERASYONEL VERİM", maintenance: "DÜŞÜK BAKIM YÜKÜ" },
+    investmentDossier: { badge: "YATIRIM ANALİZİ · GİZLİ", title: "KAFM ORIGIN RISK & ROI BRIEF", subtitle: "Tesis-özel giriş risk ve finansal etki değerlendirmesi.", technicalTitle: "TEKNİK ÇEKİRDEK", coreLabel: "Core", coreValue: "120.000 RPM Jet-Flow", opticsLabel: "Optik Katman", opticsValue: "Borosilikat Kristal", defenseLabel: "Risk-Kontrol Katmanı", defenseValue: "UV-C destekli hijyen koruması", analysisTitle: "YATIRIM SENARYOSU", roiLabel: "ROI", roiValue: "340%", paybackLabel: "Geri Dönüş", paybackValue: "14 AY", savePdf: "PDF OLARAK KAYDET", close: "Kapat", confidentiality: "Bu doküman gizli ticari değerlendirme içerir.", assumptionNote: "Not: ROI ve geri dönüş süresi tesis verilerine göre varsayım bazlı modellenir." },
+    form: { title: "Analiz Dosyasına Erişin", name: "Ad Soyad", email: "E-posta", company: "Şirket / Tesis", submit: "Dosyayı Aç ve Yazdır" },
+    calculator: { title: "ROI HESAPLAYICI", subtitle: "Tesis verilerinizi girerek yıllık tasarruf potansiyelini görün.", visitors: "Günlük Ziyaretçi", rainyDays: "Yıllık Yağışlı Gün", calculate: "HESAPLA", savingsLabel: "Yıllık Tahmini Tasarruf", paybackLabel: "Yatırım Geri Dönüşü", currency: "₺", unit: "AY" }
   },
   en: {
-    hero: {
-      badge: "ELITE OPERATIONAL STANDARD · 2025",
-      title: "KAFM ORIGIN",
-      subtitle: "THE ONLY SEAL OF PRESTIGE",
-      desc: "Stop the invisible cost bleeding. A strategic engineering masterpiece that controls not just umbrellas, but your liability risks and brand image at the very entrance."
-    },
-    problem: {
-      tag: "STRATEGIC VULNERABILITY",
-      title: "WET FLOORS: A FINANCIAL TIME BOMB",
-      desc: "Every rainy day is a risk of a lawsuit destroying your brand. Wet floors are not just a cleaning issue; they are a 'silent profit killer' stealing millions every year and the biggest crack in your reputation.",
-      risk_title: "RISK ANALYSIS",
-      risk_status: "CRITICAL",
-      risk_desc: "Uncontrolled wet floors create an average of 150+ complaint points in your corporate reputation every month.",
-      legal_risk: "Legal Risk Burden",
-      complaints: "Complaints / Month"
-    },
-    tech1: {
-      tag: "OPERATIONAL DOMINANCE 01",
-      title: "THE ZERO-RISK LOCK",
-      desc: "Imprison water in seconds with magnetic alignment technology. Eradicate 99.8% of chaos and accidents at the entrance, moving your business beyond legal settlements and operational weaknesses.",
-      index: "PROTECTION INDEX",
-      safety: "SAFETY",
-      stability: "STABILITY"
-    },
-    tech2: {
-      tag: "OPERATIONAL DOMINANCE 02",
-      title: "120,000 RPM PROFIT MACHINE",
-      desc: "Jet-Flow doesn't just dry; it drives costs down. Turn the hidden expenses of cleaning armies and waste materials into a fortune annually. Our speed guarantees your prestige remains uninterrupted.",
-      analytics: "OPERATIONAL ANALYTICS",
-      savings_tag: "SAVINGS",
-      metric: "METRIC",
-      value: "VALUE",
-      energy: "Energy Efficiency",
-      drying: "Drying Time",
-      annual: "Annual Savings"
-    },
-    tech3: {
-      tag: "OPERATIONAL DOMINANCE 03",
-      title: "PSYCHOLOGICAL HYGIENE SHIELD",
-      desc: "Eradicate not just water, but bacterial fears with UV-C technology. Give your customers not just a dry floor, but a supreme sense of trust and control. Trust is the ultimate investor.",
-      status: "BIO-DEFENSE STATUS",
-      active: "ACTIVE",
-      kill_rate: "Pathogen Kill Rate",
-      exposure: "Exposure Time"
-    },
-    design: {
-      tag: "ARCHITECTURAL AUTHORITY",
-      title: "A SILENT DECLARATION OF PRESTIGE",
-      desc: "The cold elegance of borosilicate glass and steel shouts your visionary power. This isn't a utility; it's the first physical contact where customers feel your corporate strength.",
-      material_title: "MATERIAL SPECS",
-      glass: "GLASS",
-      glass_desc: "High-Resistence Borosilicate",
-      steel: "STEEL",
-      steel_desc: "Marine Grade 316L"
-    },
-    capacity: {
-      tag: "UNINTERRUPTED POWER",
-      title: "HIGH-TRAFFIC DOMINANCE",
-      desc: "Mag-Safe technology that greets thousands of visitors tirelessly. Erase maintenance teams and breakdown risks from the field. KAFM Origin stands as an unshakable fortress of efficiency.",
-      tank: "TANK CAPACITY",
-      volume: "2.5 LITERS",
-      optimized: "Optimized for 1000+ daily uses."
-    },
-    roi: {
-      tag: "FINANCIAL DIRECTIVE",
-      title: "BEYOND INVESTMENT: ROI DOMINANCE",
-      desc: "KAFM Origin is not an expense; it is your operational armor. Paying for itself in 14 months, it serves direct profitability by stopping the bleeding in cleaning and legal budgets.",
-      risk_mgt: "RISK MANAGEMENT",
-      payback: "PAYBACK",
-      sustainability: "SUSTAINABILITY"
-    },
-    cta: {
-      tag: "DECISION MOMENT",
-      title: "MANAGE RISKS OR BE ENSLAVED BY THEM",
-      desc: "Secure your corporate future at the entrance. Either lead with this technology or continue to suffer under traditional costs.",
-      button: "DOWNLOAD INVESTMENT FILE NOW",
-      global: "GLOBAL STANDARD",
-      efficiency: "Efficiency",
-      maintenance: "Maintenance"
-    }
+    common: { scrollExplore: "SCROLL FOR STRATEGIC ANALYSIS ↓", close: "Close", savePdf: "Save as PDF", download: "Download", requestAnalysis: "Request Facility Risk Analysis", cfoBrief: "View CFO Brief", bookDemo: "Book Enterprise Demo", globalStandard: "GLOBAL STANDARD", excellence: "EXCELLENCE", monthsShort: "MO" },
+    category: { eyebrow: "ENTRANCE RISK INFRASTRUCTURE", title: "ENTRANCES SHOULD NOT LEAK RISK.", subtitle: "KAFM ORIGIN transforms wet-floor exposure at commercial entrances into a managed layer of operational, legal, and financial control.", investorLine: "INVESTOR THESIS: RISK-CONTROL INFRASTRUCTURE", buyerLine: "ENTERPRISE BUYERS: MEASURABLE ENTRANCE SAFETY" },
+    hero: { badge: "STRATEGIC MINDSET", title: "WET FLOOR RISK CONTROL", title1: "WET FLOORS", title2: "A FINANCIAL", title3: "TIME BOMB", subtitle: "MANAGE RISK WITH TECHNOLOGY", desc: "KAFM ORIGIN is designed as enterprise entrance risk infrastructure, not just a device." },
+    problem: { tag: "INVISIBLE COST", title: "WET FLOOR RISK", desc: "A slip event is not a minor incident; it compounds into liability, claims pressure, and trust erosion.", legal_risk: "Legal Exposure", complaints: "Customer Claims", risk_title: "Risk Index", risk_status: "HIGH", risk_desc: "Recurring cost, not a one-time loss" },
+    design: { tag: "INDUSTRIAL DESIGN", title: "MATERIAL AND DURABILITY ARCHITECTURE", desc: "Built for premium entrances with optical clarity, structural confidence, and long-life operation.", material_title: "Material Architecture", glass: "BOROSILICATE", glass_desc: "Chemical stability with optical clarity", steel: "316L STEEL", steel_desc: "High corrosion resistance" },
+    tech2: { tag: "INTELLIGENT ANALYTICS", title: "RISK OPTIMIZATION THROUGH OPERATIONAL DATA", desc: "Performance and traffic signals are analyzed together to balance energy, throughput, and safety.", analytics: "Real-time performance analytics", savings_tag: "Scenario-led cost pressure reduction", metric: "Annual ROI and risk indicators", value: "Command dashboard integration", energy: "ENERGY CONTROL", drying: "DRYING SPEED", annual: "ANNUAL IMPACT REPORT" },
+    tech3: { tag: "HYGIENE ENGINE", title: "UV-C SUPPORTED ACTIVE PROTECTION", desc: "UV-C sterilization support ensures floor safety extends beyond dryness.", status: "System Status", active: "ACTIVE", kill_rate: "Microbial Impact", exposure: "99.9%" },
+    capacity: { tag: "TRAFFIC DOMINANCE", title: "STABLE IN HIGH-TRAFFIC ZONES", desc: "Designed for uninterrupted operation across malls, hospitals, plazas, and hospitality sites.", tank: "MODULAR TANK", volume: "HIGH VOLUME", optimized: "OPTIMIZED FLOW" },
+    trust: { title: "TRUST AND DEPLOYMENT FRAMEWORK", subtitle: "Implementation, service and modeling can be structured per facility without inflated claims.", installation: "Deployment Flow", maintenance: "Maintenance & Service", service: "Planned service windows and operational continuity policy can be defined with each deployment.", testing: "Pilot Program", certification: "Technical validation, service and certification roadmap can be structured in the investment dossier.", disclaimer: "Deployment workflow is tailored to each facility type." },
+    roi: { tag: "FINANCIAL DIRECTIVE", title: "ROI BEYOND EQUIPMENT", desc: "KAFM ORIGIN is not a device; it is a risk-control and operational ROI platform.", subtitle: "CFO-readable model", assumptionTitle: "ROI Assumptions", assumptionTraffic: "Facility traffic", assumptionRain: "Rainfall profile", assumptionIncident: "Incident history", assumptionCost: "Operational costs", modelNote: "ROI and payback period are modeled based on facility traffic, rainfall profile, operational costs and incident history. Displayed values should be interpreted as investment-analysis scenarios." },
+    roiMetrics: { riskManagementLabel: "RISK MANAGEMENT", riskManagementValue: "0%", riskManagementCaption: "LIABILITY", paybackLabel: "PAYBACK", paybackValue: "14", paybackCaption: "PAYBACK", sustainabilityLabel: "SUSTAINABILITY", sustainabilityValue: "A+", sustainabilityCaption: "ECO-RATING" },
+    cta: { tag: "DECISION MOMENT", title: "CONTROL THE RISK BEFORE IT BECOMES A COST.", desc: "KAFM ORIGIN is designed to make wet-floor exposure at commercial entrances visible, modelable and manageable.", primaryButton: "REQUEST FACILITY RISK ANALYSIS", secondaryButton: "VIEW CFO BRIEF", global: "GLOBAL STANDARD", efficiency: "OPERATIONAL EFFICIENCY", maintenance: "LOW MAINTENANCE LOAD" },
+    investmentDossier: { badge: "INVESTMENT ANALYSIS · CONFIDENTIAL", title: "KAFM ORIGIN RISK & ROI BRIEF", subtitle: "Facility-specific entrance risk and financial impact positioning.", technicalTitle: "TECHNICAL CORE", coreLabel: "Core", coreValue: "120,000 RPM Jet-Flow", opticsLabel: "Optical Layer", opticsValue: "Borosilicate Crystal", defenseLabel: "Risk-Control Layer", defenseValue: "UV-C supported hygiene protection", analysisTitle: "INVESTMENT SCENARIO", roiLabel: "ROI", roiValue: "340%", paybackLabel: "Payback", paybackValue: "14 MO", savePdf: "SAVE AS PDF", close: "Close", confidentiality: "This document contains confidential commercial evaluation data.", assumptionNote: "Note: ROI and payback period are modeled with facility-specific assumptions." },
+    form: { title: "Access Analysis Dossier", name: "Full Name", email: "Email", company: "Company / Facility", submit: "Open & Print Dossier" },
+    calculator: { title: "ROI CALCULATOR", subtitle: "Enter facility data to see annual saving potential.", visitors: "Daily Visitors", rainyDays: "Annual Rainy Days", calculate: "CALCULATE", savingsLabel: "Estimated Annual Savings", paybackLabel: "Investment Payback", currency: "$", unit: "MO" }
   },
   de: {
-    hero: { badge: "ELITE-OPERATIONS-STANDARD · 2025", title: "KAFM ORIGIN", subtitle: "DAS EINZIGE SIEGEL FÜR PRESTIGE", desc: "Stoppen Sie die unsichtbare Kostenblutung. Ein technisches Meisterwerk am Eingang." },
-    problem: { tag: "STRATEGISCHE SCHWACHSTELLE", title: "NASSE BÖDEN", desc: "Nasse Böden sind ein 'stiller Profitkiller'.", risk_title: "RISIKOANALYSE", risk_status: "KRITISCH", risk_desc: "Unkontrollierte Böden verursachen 150+ Beschwerden.", legal_risk: "Rechtliches Risiko", complaints: "Beschwerden / Monat" },
-    tech1: { tag: "OPERATIVE DOMINANZ 01", title: "DER ZERO-RISK-LOCK", desc: "Reduziert Unfälle am Eingang um 99,8 %.", index: "SCHUTZINDEX", safety: "SICHERHEIT", stability: "STABILITÄT" },
-    tech2: { tag: "OPERATIVE DOMINANZ 02", title: "120.000 U/MIN PROFITMASCHINE", desc: "Verwandelt Reinigungskosten in Vermögen.", analytics: "OPERATIVE ANALYTIK", savings_tag: "ERSPARNIS", metric: "METRIK", value: "WERT", energy: "Energieeffizienz", drying: "Trocknungszeit", annual: "Jahresersparnis" },
-    tech3: { tag: "OPERATIVE DOMINANZ 03", title: "PSYCHOLOGİSCHER HYGİENESCHUTZ", desc: "Schafft Vertrauen durch UV-C-Technologie.", status: "BIO-SCHUTZSTATUS", active: "AKTIV", kill_rate: "Erreger-Abtötungsrate", exposure: "Expositionszeit" },
-    design: { tag: "ARCHITEKTONISCHE AUTORITÄT", title: "PRESTİGE-ERKLÄRUNG", desc: "Symbol Ihrer visionären Kraft.", material_title: "MATERIALSPEZIFIKATIONEN", glass: "GLAS", glass_desc: "Borosilikat", steel: "STAHL", steel_desc: "Marine Grade 316L" },
-    capacity: { tag: "UNTERBRECHUNGSFREIE KRAFT", title: "HOCHFREQUENZ-DOMINANZ", desc: "Festung der Effizienz.", tank: "TANKKAPAZITÄT", volume: "2,5 LITER", optimized: "Optimiert für 1000+ Anwendungen." },
-    roi: { tag: "FINANZDIREKTIVE", title: "ROI-DOMINANZ", desc: "Ihr operativer Schutzpanzer.", risk_mgt: "RISIKOMANAGEMENT", payback: "AMORTISATION", sustainability: "NACHHALTIGKEIT" },
-    cta: { tag: "ENTSCHEIDUNGSMOMENT", title: "RISIKEN MANAGEN", desc: "Sichern Sie Ihre Zukunft.", button: "JETZT HERUNTERLADEN", global: "GLOBALER STANDARD", efficiency: "Effizienz", maintenance: "Wartung" }
+    common: { scrollExplore: "FUR STRATEGISCHE ANALYSE SCROLLEN ↓", close: "Schliessen", savePdf: "Als PDF speichern", download: "Herunterladen", requestAnalysis: "Standort-Risikoanalyse anfordern", cfoBrief: "CFO-Brief ansehen", bookDemo: "Enterprise-Demo buchen", globalStandard: "GLOBALER STANDARD", excellence: "EXZELLENZ", monthsShort: "MON" },
+    category: { eyebrow: "STRATEGISCHE INFRASTRUKTUR", title: "KAFM ORIGIN", subtitle: "DER GLOBALE STANDARD FÜR EINGANGSSICHERHEIT." },
+    hero: { badge: "STRATEGISCHE VISION", title: "RISIKOKONTROLLE NÄSSE", title1: "NÄSSE AM", title2: "BODEN IST", title3: "RISIKOREICH", subtitle: "STEUERUNG DURCH TECHNOLOGIE", desc: "KAFM ORIGIN ist als Infrastruktur zur Kontrolle von Eingangsrisiken konzipiert." },
+    problem: { tag: "UNSICHTBARE KOSTEN", title: "NÄSSERISIKO", desc: "Ein Ausrutschen ist kein Einzelfall; es löst Haftung, Ansprüche und Vertrauensverlust aus.", legal_risk: "Rechtliches Risiko", complaints: "Kundenbeschwerden", risk_title: "Risikoniveau", risk_status: "HOCH", risk_desc: "Wiederkehrende Kosten, kein einmaliger Verlust" },
+    design: { tag: "INDUSTRIEDESIGN", title: "MATERIALARCHITEKTUR UND LANGLEBIGKEIT", desc: "Entwickelt für Premium-Eingänge mit optischer Klarheit, struktureller Robustheit und langem Lebenszyklus.", material_title: "Materialarchitektur", glass: "BOROSILIKAT", glass_desc: "Chemische Stabilität und visuelle Klarheit", steel: "316L STAHL", steel_desc: "Hohe Korrosionsbeständigkeit" },
+    tech2: { tag: "INTELLIGENTE ANALYTIK", title: "RISIKOOPTIMIERUNG DURCH BETRIEBSDATEN", desc: "Leistungs- und Verkehrssignale werden gemeinsam analysiert, um Energie, Durchsatz und Sicherheit auszubalancieren.", analytics: "Echtzeit-Leistungsanalytik", savings_tag: "Kostendruckreduzierung pro Szenario", metric: "Jährliche ROI- und Risikoindikatoren", value: "Dashboard-Integration", energy: "ENERGIECONTROLLING", drying: "TROCKNUNGSGESCHWINDIGKEIT", annual: "JÄHRLICHER IMPACT-BERICHT" },
+    tech3: { tag: "HYGIENEMOTOR", title: "AKTIVER SCHUTZ UNTERSTÜTZT DURCH UV-C", desc: "Die UV-C-Unterstützung erweitert die Sicherheit über das bloße Trocknen des Bodens hinaus.", status: "Systemstatus", active: "AKTIV", kill_rate: "Mikrobielle Wirkung", exposure: "99,9%" },
+    capacity: { tag: "FLUSSSTEUERUNG", title: "STABIL IN HOCHFREQUENZBEREICHEN", desc: "Entwickelt für den Dauerbetrieb in Zentren, Kliniken, Plazas und Hotels.", tank: "MODULARER TANK", volume: "HOHES VOLUMEN", optimized: "OPTIMIERTER FLUSS" },
+    trust: { title: "DEPLOYYMENT- UND VERTRAUENSRAHMEN", subtitle: "Deployment, Wartung und ROI-Modellierung können pro Standort strukturiert werden.", installation: "Deployment-Fluss", maintenance: "Wartung & Service", service: "Wartungsfenster und Betriebskontinuitätsrichtlinien können definiert werden.", testing: "Pilotprogramm", certification: "Technische Validierung und Zertifizierungs-Roadmap können im Dossier formalisiert werden.", disclaimer: "Der Deployment-Fluss wird an den Standorttyp angepasst." },
+    roi: { tag: "FINANZDIREKTIVE", title: "ROI JENSEITS DER AUSRÜSTUNG", desc: "KAFM ORIGIN ist kein Gerät; es ist eine Risikokontroll- und operative ROI-Plattform.", subtitle: "CFO-lesbares Modell", assumptionTitle: "ROI-Annahmen", assumptionTraffic: "Anlagenverkehr", assumptionRain: "Regenprofil", assumptionIncident: "Ereignisverlauf", assumptionCost: "Betriebskosten", modelNote: "ROI und Amortisationszeitraum werden basierend auf Anlagenverkehr, Regenprofil, Betriebskosten und Ereignisverlauf modelliert." },
+    roiMetrics: { riskManagementLabel: "RISIKOMANAGEMENT", riskManagementValue: "0%", riskManagementCaption: "HAFTUNG", paybackLabel: "AMORTISATION", paybackValue: "14", paybackCaption: "AMORTISATION", sustainabilityLabel: "NACHHALTIGKEIT", sustainabilityValue: "A+", sustainabilityCaption: "ECO-RATING" },
+    cta: { tag: "ENTSCHEIDUNGSMOMENT", title: "KONTROLLIEREN SIE DAS RISIKO, BEVOR ES ZU KOSTEN WIRD.", desc: "KAFM ORIGIN wurde entwickelt, um die Exposition gegenüber nassen Böden an gewerblichen Eingängen sichtbar, modellierbar und verwaltbar zu machen.", primaryButton: "STANDORT-RISIKOANALYSE ANFORDERN", secondaryButton: "CFO-BRIEF ANSEHEN", global: "GLOBALER STANDARD", efficiency: "OPERATIVE EFFIZIENZ", maintenance: "GERINGE WARTUNGSLAST" },
+    investmentDossier: { badge: "INVESTITIONSANALYSE · VERTRAULICH", title: "KAFM ORIGIN RISK & ROI BRIEF", subtitle: "Anlagenspezifische Eingangsrisiko- und Finanzauswirkungspositionierung.", technicalTitle: "TECHNISCHER KERN", coreLabel: "Core", coreValue: "120.000 U/min Jet-Flow", opticsLabel: "Optische Schicht", opticsValue: "Borosilikatkristall", defenseLabel: "Risikokontrollschicht", defenseValue: "UV-C unterstützter Hygieneschutz", analysisTitle: "INVESTITIONSSZENARIO", roiLabel: "ROI", roiValue: "340%", paybackLabel: "Amortisation", paybackValue: "14 MON", savePdf: "ALS PDF SPEICHERN", close: "Schliessen", confidentiality: "Dieses Dokument enthält vertrauliche kommerzielle Bewertungsdaten.", assumptionNote: "Hinweis: ROI und Amortisationszeitraum werden mit anlagenspezifischen Annahmen modelliert." },
+    form: { title: "Zugriff auf Analysedossier", name: "Name", email: "E-Mail", company: "Firma / Anlage", submit: "Dossier öffnen & drucken" },
+    calculator: { title: "ROI-RECHNER", subtitle: "Geben Sie Ihre Anlagendaten ein, um das jährliche Einsparpotenzial zu sehen.", visitors: "Tägliche Besucher", rainyDays: "Jährliche Regentage", calculate: "BERECHNEN", savingsLabel: "Geschätzte Ersparnis", paybackLabel: "Amortisationszeit", currency: "€", unit: "MON" }
   },
   fr: {
-    hero: { badge: "STANDARD OPÉRATIONNEL D'ÉLITE · 2025", title: "KAFM ORIGIN", subtitle: "LE SEUL SCEAU DE PRESTIGE", desc: "Arrêtez l'hémorragie des coûts invisibles." },
-    problem: { tag: "VULNÉRABILITÉ STRATÉGIQUE", title: "SOLS MOUILLÉS", desc: "Les sols mouillés sont un 'tueur de profits'.", risk_title: "ANALYSE DE RISQUE", risk_status: "CRITIQUE", risk_desc: "Les sols non contrôlés génèrent 150+ plaintes.", legal_risk: "Risque Juridique", complaints: "Plaintes / Mois" },
-    tech1: { tag: "DOMINANCE OPÉRATIONNELLE 01", title: "LE VERROU ZÉRO RISQUE", desc: "Éradiquez 99,8 % du chaos.", index: "INDICE DE PROTECTION", safety: "SÉCURITÉ", stability: "STABILITÉ" },
-    tech2: { tag: "DOMINANCE OPÉRATIONNELLE 02", title: "MACHINE À PROFIT", desc: "Transformez les dépenses en fortune.", analytics: "ANALYSE OPÉRATIONNELLE", savings_tag: "ÉCONOMIE", metric: "MÉTRIQUE", value: "VALEUR", energy: "Efficacité Énergétique", drying: "Temps de Séchage", annual: "Économies Annuelles" },
-    tech3: { tag: "DOMINANCE OPÉRATIONNELLE 03", title: "BOUCLIER D'HYGIÈNE", desc: "Confiance et contrôle via UV-C.", status: "STATUT DE BIO-DÉFENSE", active: "ACTIF", kill_rate: "Taux de Destruction", exposure: "Temps d'Exposition" },
-    design: { tag: "AUTORITÉ ARCHITECTURALE", title: "DÉCLARATION DE PRESTIGE", desc: "Premier contact avec votre force.", material_title: "MATÉRIAUX", glass: "VERRE", glass_desc: "Borosilicate", steel: "ACIER", steel_desc: "Marine Grade 316L" },
-    capacity: { tag: "PUISSANCE ININTERROMPUE", title: "DOMINANCE DU TRAFIC", desc: "Forteresse d'efficacité.", tank: "CAPACITÉ DU RÉSERVOIR", volume: "2,5 LITRES", optimized: "Optimisé pour 1000+ utilisations." },
-    roi: { tag: "DIRECTIVE FINANCIÈRE", title: "DOMINANCE DU ROI", desc: "Votre armure opérationnelle.", risk_mgt: "GESTION DES RISQUES", payback: "RETOUR", sustainability: "DURABILITÉ" },
-    cta: { tag: "MOMENT DE DÉCISION", title: "GÉREZ LES RISQUES", desc: "Sécurisez votre avenir.", button: "TÉLÉCHARGER MAINTENANT", global: "STANDARD MONDIAL", efficiency: "Efficacité", maintenance: "Maintenance" }
+    common: { scrollExplore: "DÉFILEZ POUR L'ANALYSE STRATÉGIQUE ↓", close: "Fermer", savePdf: "Enregistrer en PDF", download: "Télécharger", requestAnalysis: "Demander une Analyse de Risque de l'Installation", cfoBrief: "Voir le Brief du CFO", bookDemo: "Réserver une Démo Entreprise", globalStandard: "STANDARD MONDIAL", excellence: "EXCELLENCE", monthsShort: "MOIS" },
+    category: { eyebrow: "INFRASTRUCTURE STRATÉGIQUE", title: "KAFM ORIGIN", subtitle: "LA NORME MONDIALE POUR LA SÉCURITÉ DES ENTRÉES." },
+    hero: { badge: "VISION STRATÉGIQUE", title: "CONTRÔLE DES RISQUES DE SOLS MOUILLÉS", title1: "SOLS MOUILLÉS", title2: "UNE BOMBE", title3: "FINANCIÈRE", subtitle: "PILOTER PAR LA TECHNOLOGIE", desc: "KAFM ORIGIN est conçu comme une infrastructure de contrôle des risques d'entrée." },
+    problem: { tag: "COÛT INVISIBLE", title: "RISQUE DE SOL MOUILLÉ", desc: "Une glissade n'est pas un incident isolé; elle déclenche responsabilité, réclamations et érosion de la confiance.", legal_risk: "Risque juridique", complaints: "Réclamations clients", risk_title: "Niveau de risque", risk_status: "ÉLEVÉ", risk_desc: "Coût récurrent, pas une perte ponctuelle" },
+    design: { tag: "DESIGN INDUSTRIEL", title: "ARCHITECTURE DES MATÉRIAUX ET DURABILITÉ", desc: "Conçu pour les entrées premium avec clarté optique, robustesse structurelle et cycle de vie long.", material_title: "Architecture des matériaux", glass: "BOROSILICATE", glass_desc: "Stabilité chimique et clarté visuelle", steel: "ACIER 316L", steel_desc: "Haute résistance à la corrosion" },
+    tech2: { tag: "ANALYTIQUE INTELLIGENTE", title: "OPTIMISATION DES RISQUES PAR DONNÉES OPÉRATIONNELLES", desc: "Les signaux de performance et de trafic sont analysés ensemble pour équilibrer énergie, débit et sécurité.", analytics: "Analytique de performance en temps réel", savings_tag: "Réduction de la pression des coûts par scénario", metric: "Indicateurs annuels de ROI et de risque", value: "Intégration du tableau de bord", energy: "CONTRÔLE DE L'ÉNERGIE", drying: "VITESSE DE SÉCHAGE", annual: "RAPPORT D'IMPACT ANUEL" },
+    tech3: { tag: "MOTEUR D'HYGIÈNE", title: "PROTECTION ACTIVE SOUTENUE PAR UV-C", desc: "Le support UV-C étend la sécurité au-delà du simple séchage du sol.", status: "Statut du système", active: "ACTIF", kill_rate: "Impact microbien", exposure: "99,9%" },
+    capacity: { tag: "MAÎTRISE DU FLUX", title: "STABLE EN ZONES À FORT TRAFIC", desc: "Conçu pour un fonctionnement continu dans les centres, cliniques, places et hôtels.", tank: "RÉSERVOIR MODULAIRE", volume: "HAUT VOLUME", optimized: "FLUX OPTIMISÉ" },
+    trust: { title: "CADRE DE DÉPLOIEMENT ET DE CONFIANCE", subtitle: "Le déploiement, la maintenance et la modélisation du ROI peuvent être structurés par site.", installation: "Flux de déploiement", maintenance: "Maintenance & Service", service: "Des fenêtres de maintenance et des politiques de continuité opérationnelle peuvent être définies.", testing: "Programme pilote", certification: "La validation technique et la feuille de route de certification peuvent être formalisées dans le dossier.", disclaimer: "Le flux de déploiement est adapté au type de site." },
+    roi: { tag: "DIRECTIVE FINANCIÈRE", title: "LE ROI AU-DELÀ DE L'ÉQUIPEMENT", desc: "KAFM ORIGIN n'est pas un appareil ; c'est une plateforme de contrôle des risques et de ROI opérationnel.", subtitle: "Modèle lisible par le CFO", assumptionTitle: "Hypothèses de ROI", assumptionTraffic: "Trafic de l'installation", assumptionRain: "Profil de pluie", assumptionIncident: "Historique des incidents", assumptionCost: "Coûts opérationnels", modelNote: "Le ROI et la période de récupération sont modélisés en fonction du trafic de l'installation, du profil de pluie, des coûts opérationnels et de l'historique des incidents." },
+    roiMetrics: { riskManagementLabel: "GESTION DES RISQUES", riskManagementValue: "0%", riskManagementCaption: "RESPONSABILITÉ", paybackLabel: "RÉCUPÉRATION", paybackValue: "14", paybackCaption: "RÉCUPÉRATION", sustainabilityLabel: "DURABILITÉ", sustainabilityValue: "A+", sustainabilityCaption: "ECO-RATING" },
+    cta: { tag: "MOMENT DE DÉCISION", title: "CONTRÔLEZ LE RISQUE AVANT QU'IL NE DEVIENNE UN COÛT.", desc: "KAFM ORIGIN est conçu pour rendre l'exposition aux sols mouillés aux entrées commerciales visible, modélisable et gérable.", primaryButton: "DEMANDER UNE ANALYSE DE RISQUE", secondaryButton: "VOIR LE BRIEF DU CFO", global: "STANDARD MONDIAL", efficiency: "EFFICACITÉ OPÉRATIONNELLE", maintenance: "FAIBLE CHARGE DE MAINTENANCE" },
+    investmentDossier: { badge: "ANALYSE D'INVESTISSEMENT · CONFIDENTIEL", title: "KAFM ORIGIN RISK & ROI BRIEF", subtitle: "Positionnement du risque d'entrée et de l'impact financier spécifique à l'installation.", technicalTitle: "CŒUR TECHNIQUE", coreLabel: "Core", coreValue: "120 000 tr/min Jet-Flow", opticsLabel: "Couche Optique", opticsValue: "Cristal Borosilicaté", defenseLabel: "Couche de Contrôle des Risques", defenseValue: "Protection hygiénique assistée par UV-C", analysisTitle: "SCÉNARIO D'INVESTISSEMENT", roiLabel: "ROI", roiValue: "340%", paybackLabel: "Récupération", paybackValue: "14 MOIS", savePdf: "ENREGISTRER EN PDF", close: "Fermer", confidentiality: "Ce document contient des données d'évaluation commerciale confidentielles.", assumptionNote: "Note : Le ROI et la période de récupération sont modélisés avec des hypothèses spécifiques à l'installation." },
+    form: { title: "Accéder au Dossier d'Analyse", name: "Nom complet", email: "E-mail", company: "Entreprise / Installation", submit: "Ouvrir & Imprimer le Dossier" },
+    calculator: { title: "CALCULATEUR DE ROI", subtitle: "Entrez les données de votre installation pour voir le potentiel d'économies annuelles.", visitors: "Visiteurs quotidiens", rainyDays: "Jours de pluie par an", calculate: "CALCULER", savingsLabel: "Économies estimées", paybackLabel: "Période de récupération", currency: "€", unit: "MOIS" }
   },
   zh: {
-    hero: { badge: "精英运营标准 · 2025", title: "KAFM ORIGIN", subtitle: "尊贵的唯一标志", desc: "止住无形的成本出血。" },
-    problem: { tag: "战略漏洞", title: "湿滑地面", desc: "湿滑地面是“沉默杀手”。", risk_title: "风险分析", risk_status: "关键", risk_desc: "不受控制的地面每月产生 150+ 投诉。", legal_risk: "法律风险负担", complaints: "投诉 / 月" },
-    tech1: { tag: "运营统治 01", title: "零风险锁定", desc: "消除入口处 99.8% 的混乱。", index: "保护指数", safety: "安全", stability: "稳定性" },
-    tech2: { tag: "运营统治 02", title: "120,000 RPM 利润机器", desc: "将清洁和浪费转化为财富。", analytics: "运营分析", savings_tag: "节省", metric: "指标", value: "数值", energy: "能源效率", drying: "干燥时间", annual: "年度节省" },
-    tech3: { tag: "运营统治 03", title: "心理卫生盾牌", desc: "给客户至高无上の信任感。", status: "生物防御状态", active: "激活", kill_rate: "病原体杀灭率", exposure: "照射时间" },
-    design: { tag: "建筑权威", title: "无声的威信宣言", desc: "客户感受到您企业实力。", material_title: "建筑材料", glass: "玻璃", glass_desc: "高强度硼硅酸盐", steel: "钢材", steel_desc: "316L 航海级不锈钢" },
-    capacity: { tag: "不间断动力", title: "高流量统治力", desc: "屹立不摇的高效堡垒。", tank: "水箱容量", volume: "2.5 升", optimized: "针对 1000+ 次使用进行优化。" },
-    roi: { tag: "财务指令", title: "ROI 统治力", desc: "这不是支出，而是您的运营装甲。", risk_mgt: "风险管理", payback: "投资回收", sustainability: "可持续性" },
-    cta: { tag: "决策时刻", title: "管理风险", desc: "在入口处确保您的企业未来。", button: "立即下载", global: "全球标准", efficiency: "效率", maintenance: "维护" }
+    common: { scrollExplore: "滚动查看战略分析 ↓", close: "关闭", savePdf: "保存为 PDF", download: "下载", requestAnalysis: "请求设施风险分析", cfoBrief: "查看 CFO 简报", bookDemo: "预订企业演示", globalStandard: "全球标准", excellence: "卓越", monthsShort: "月" },
+    category: { eyebrow: "战略基础设施", title: "KAFM ORIGIN", subtitle: "全球入口安全标准。" },
+    hero: { badge: "战略愿景", title: "湿滑地面风险控制", title1: "湿滑地面", title2: "是财务", title3: "定时炸弹", subtitle: "用技术管理风险", desc: "KAFM ORIGIN 定位为企业入口风险基础设施，而非单一设备。" },
+    problem: { tag: "隐性成本", title: "湿滑地面风险", desc: "一次滑倒并非偶发事件，而会持续带来责任成本、索赔压力与信任损耗。", legal_risk: "法律风险", complaints: "客户索赔", risk_title: "风险指数", risk_status: "高", risk_desc: "持续性成本，而非一次性损失" },
+    design: { tag: "工业设计", title: "材料与耐久架构", desc: "面向高端入口场景，兼顾光学清晰度、结构可靠性与长期稳定运行。", material_title: "材料架构", glass: "硼硅玻璃", glass_desc: "化学稳定且光学清晰", steel: "316L 不锈钢", steel_desc: "高抗腐蚀能力" },
+    tech2: { tag: "智能分析", title: "以运营数据驱动风险优化", desc: "将设备性能与客流数据联动分析，平衡能耗、处理效率与安全水平。", analytics: "实时性能分析", savings_tag: "情景化成本压力优化", metric: "年度 ROI 与风险指标", value: "管理看板集成", energy: "能耗控制", drying: "干燥速度", annual: "年度影响报告" },
+    tech3: { tag: "卫生引擎", title: "UV-C 增强主动防护", desc: "UV-C 支持让地面安全不止于干燥，更覆盖卫生风险控制。", status: "系统状态", active: "运行中", kill_rate: "微生物抑制", exposure: "99.9%" },
+    capacity: { tag: "流量控制", title: "在高流量区域保持稳定", desc: "专为中心、诊所、广场和酒店的连续运行而设计。", tank: "模块化水箱", volume: "大容量", optimized: "优化流量" },
+    trust: { title: "部署与信任框架", subtitle: "部署、维护和 ROI 建模可以根据每个站点进行结构化。", installation: "部署流程", maintenance: "维护与服务", service: "可以定义维护窗口和业务连续性策略。", testing: "试点项目", certification: "技术验证和认证路线图可以在档案中正式化。", disclaimer: "部署流程根据站点类型进行定制。" },
+    roi: { tag: "财务指令", title: "超越设备的投资回报率", desc: "KAFM ORIGIN 不仅仅是一台设备；它是一个风险控制和运营投资回报率平台。", subtitle: "CFO 可读模型", assumptionTitle: "ROI 假设", assumptionTraffic: "设施流量", assumptionRain: "降雨情况", assumptionIncident: "事故历史", assumptionCost: "运营成本", modelNote: "投资回报率和回收期是根据设施流量、降雨情况、运营成本和事故历史建模的。" },
+    roiMetrics: { riskManagementLabel: "风险管理", riskManagementValue: "0%", riskManagementCaption: "责任", paybackLabel: "回收期", paybackValue: "14", paybackCaption: "回收期", sustainabilityLabel: "可持续性", sustainabilityValue: "A+", sustainabilityCaption: "环保评级" },
+    cta: { tag: "决策时刻", title: "在风险变成成本之前控制它。", desc: "KAFM ORIGIN 旨在使商业入口的湿滑地面暴露情况可见、可建模且可管理。", primaryButton: "请求设施风险分析", secondaryButton: "查看 CFO 简报", global: "全球标准", efficiency: "运营效率", maintenance: "低维护负载" },
+    investmentDossier: { badge: "投资分析 · 机密", title: "KAFM ORIGIN 风险与投资回报率简报", subtitle: "特定设施的入口风险和财务影响定位。", technicalTitle: "技术核心", coreLabel: "核心", coreValue: "120,000 RPM 喷射流", opticsLabel: "光学层", opticsValue: "硼硅酸盐水晶", defenseLabel: "风险控制层", defenseValue: "UV-C 辅助卫生防护", analysisTitle: "投资方案", roiLabel: "ROI", roiValue: "340%", paybackLabel: "回收期", paybackValue: "14 个月", savePdf: "保存为 PDF", close: "关闭", confidentiality: "本文件包含机密商业评估数据。", assumptionNote: "注：投资回报率和回收期是根据特定设施的假设建模的。" },
+    form: { title: "获取分析档案", name: "姓名", email: "电子邮件", company: "公司 / 设施", submit: "打开并打印档案" },
+    calculator: { title: "ROI 计算器", subtitle: "输入您的设施数据以查看年度潜在节省。", visitors: "每日访客", rainyDays: "年度降雨天数", calculate: "计算", savingsLabel: "预计节省", paybackLabel: "回收期", currency: "¥", unit: "月" }
   }
 };
