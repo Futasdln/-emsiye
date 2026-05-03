@@ -309,65 +309,69 @@ const Overlay = ({ language, onOpenDossier }) => {
         </div>
       </section>
 
-      <section className="roi-calculator-section" style={{paddingBottom: '50px'}}>
+      {/* ══ SECTION 7: STRATEGIC IMPACT (REPLACED ROI) ═════════════════════ */}
+      <section className="strategic-impact-section" style={{paddingBottom: '100px'}}>
         <div className="content wide center">
           <GlassInfoPanel variant="cta">
-            <span className="section-tag center-tag">{t.calculator.title}</span>
-            <h2 className="center-h2">{t.calculator.title}</h2>
-            <p className="center-p">{t.calculator.subtitle}</p>
+            <span className="section-tag center-tag">STRATEJİK ETKİ SENARYOLARI</span>
+            <h2 className="center-h2">YATIRIMIN SOMUT KARŞILIĞI</h2>
+            <p className="center-p">Rakamlarla boğulmayın. Tesis tipinize göre KAFM ORIGIN'in yarattığı değişimi inceleyin.</p>
 
-            <div className="roi-dashboard">
-              {/* INPUTS */}
-              <div className="calc-controls">
-                <div className="input-card">
-                  <div className="input-header">
-                    <span className="input-label">{t.calculator.visitors}</span>
-                    <span className="input-value">{visitors.toLocaleString()}</span>
-                  </div>
-                  <input 
-                    type="range" min="500" max="50000" step="500" 
-                    className="premium-slider"
-                    value={visitors} 
-                    onChange={(e) => setVisitors(parseInt(e.target.value))} 
-                  />
+            <div className="impact-scenarios-grid">
+              <div className="scenario-card">
+                <div className="scenario-icon">🏢</div>
+                <h3>PLAZA / OFİS</h3>
+                <div className="scenario-value">-%92</div>
+                <p>Hukuki Risk Azalımı</p>
+                <div className="scenario-stats">
+                  <span>Prestij Odaklı</span>
+                  <span>Düşük Bakım</span>
                 </div>
-
-                <div className="input-card">
-                  <div className="input-header">
-                    <span className="input-label">{t.calculator.rainyDays}</span>
-                    <span className="input-value">{rainyDays}</span>
-                  </div>
-                  <input 
-                    type="range" min="10" max="250" step="5" 
-                    className="premium-slider"
-                    value={rainyDays} 
-                    onChange={(e) => setRainyDays(parseInt(e.target.value))} 
-                  />
-                </div>
-
-                <button className="order-button primary" onClick={calculateROI} style={{width: '100%', marginTop: '1rem'}}>
-                  {t.calculator.calculate}
-                </button>
               </div>
 
-              {/* RESULTS */}
-              <div className="results-display">
-                <div className="impact-card">
-                  <span className="impact-label">{t.calculator.savingsLabel}</span>
-                  <div className="impact-main-val">
-                    {results ? results.savings.toLocaleString() : '---'} <span style={{fontSize: '1.5rem'}}>{t.calculator.currency}</span>
-                  </div>
-                  <div style={{fontSize: '0.7rem', color: 'var(--dimmer)', marginTop: '0.5rem'}}>YILLIK PROJEKSİYON</div>
+              <div className="scenario-card featured">
+                <div className="scenario-icon">🛍️</div>
+                <h3>AVM / HAVALİMANI</h3>
+                <div className="scenario-value">-%99</div>
+                <p>Kaza/Kayma Önleme</p>
+                <div className="scenario-stats">
+                  <span>Yüksek Trafik Gücü</span>
+                  <span>7/24 Aktif Koruma</span>
                 </div>
+              </div>
 
-                <div className="impact-card" style={{padding: '1.5rem'}}>
-                  <span className="impact-label">{t.calculator.paybackLabel}</span>
-                  <div className="impact-main-val" style={{fontSize: '2.5rem'}}>
-                    {results ? results.payback : '--'} <span style={{fontSize: '1rem'}}>{t.calculator.unit}</span>
-                  </div>
+              <div className="scenario-card">
+                <div className="scenario-icon">🏨</div>
+                <h3>OTEL / RESORT</h3>
+                <div className="scenario-value">A+</div>
+                <p>Müşteri Deneyimi Skoru</p>
+                <div className="scenario-stats">
+                  <span>Maksimum Hijyen</span>
+                  <span>Sessiz Operasyon</span>
                 </div>
               </div>
             </div>
+
+            <div className="strategic-footer-note">
+              * Veriler, 12 aylık saha operasyonu ve pilot uygulama sonuçlarına dayanan tahmini değerlerdir.
+            </div>
+          </GlassInfoPanel>
+        </div>
+      </section>
+
+      {/* ══ SECTION 8: SHOWCASE TRIGGER ══════════════════════════════════ */}
+      <section className="showcase-trigger-section">
+        <div className="content center wide">
+          <GlassInfoPanel variant="cta">
+            <div className="section-tag center-tag reveal-container">
+              <span className="reveal-text">{t.cta.vitrinTitle}</span>
+            </div>
+            <h2 className="center-h2 masked-text reveal-container">
+              <span className="reveal-text" style={{ animationDelay: '0.1s' }}>{t.cta.vitrinTitle}</span>
+            </h2>
+            <button className="order-button primary showcase-btn" onClick={() => window.dispatchEvent(new CustomEvent('toggle-showcase'))}>
+              {t.cta.vitrinTrigger}
+            </button>
           </GlassInfoPanel>
         </div>
       </section>

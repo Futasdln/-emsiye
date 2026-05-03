@@ -4,6 +4,8 @@ import { ScrollControls, Scroll } from '@react-three/drei'
 import Experience from './components/Experience'
 import Overlay from './components/Overlay'
 import InvestmentDossier from './components/InvestmentDossier'
+import ShowcaseGallery from './components/ShowcaseGallery'
+import { useEffect } from 'react'
 
 const Loader = () => (
     <div className="v-loader">
@@ -31,8 +33,20 @@ function App() {
   const [language, setLanguage] = useState('tr');
   const [productColor, setProductColor] = useState(colors[0]);
   const [showDossier, setShowDossier] = useState(false);
+  const [showShowcase, setShowShowcase] = useState(false);
 
   const toggleDossier = () => setShowDossier(!showDossier);
+  const toggleShowcase = () => {
+    setShowShowcase(!showShowcase);
+    // When opening showcase, we might want to disable scrolling on body
+    document.body.style.overflow = !showShowcase ? 'hidden' : 'auto';
+  };
+
+  useEffect(() => {
+    const handleToggle = () => toggleShowcase();
+    window.addEventListener('toggle-showcase', handleToggle);
+    return () => window.removeEventListener('toggle-showcase', handleToggle);
+  }, [showShowcase]);
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
@@ -78,6 +92,7 @@ function App() {
       </Suspense>
 
       {showDossier && <InvestmentDossier language={language} onClose={toggleDossier} />}
+      {showShowcase && <ShowcaseGallery language={language} onClose={toggleShowcase} />}
     </div>
   )
 }
