@@ -1481,7 +1481,11 @@ p {
 
 @media (max-width: 768px) {
   .strategic-impact-section {
-    padding-bottom: 60px;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    align-items: flex-start;
+    height: auto;
+    min-height: 140vh; /* Give it more room on mobile */
   }
 }
 
@@ -1585,6 +1589,10 @@ p {
 @media (max-width: 900px) {
   .impact-scenarios-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .scenario-card {
+    padding: 30px 20px;
   }
   .scenario-card.featured {
     transform: none;
@@ -1616,6 +1624,19 @@ p {
   text-align: center;
   border: 1px dashed rgba(255,255,255,0.1);
   z-index: 1;
+}
+
+.showcase-trigger-section {
+  padding-bottom: 120px;
+}
+
+@media (max-width: 768px) {
+  .showcase-trigger-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding-bottom: 150px; /* Extra padding for UI bar at bottom */
+  }
 }
 
 .image-error .image-placeholder {
