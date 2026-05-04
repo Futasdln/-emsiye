@@ -5,18 +5,6 @@ import MetricCard from './MetricCard'
 
 const Overlay = ({ language, onOpenDossier }) => {
   const t = translations[language] || translations.tr
-  
-  // ROI Calculator State
-  const [visitors, setVisitors] = useState(5000);
-  const [rainyDays, setRainyDays] = useState(60);
-  const [results, setResults] = useState(null);
-
-  const calculateROI = () => {
-    // Basic logic: probability of slip * visitors * rainy days * cost per slip
-    const savings = Math.round((visitors * rainyDays * 0.0008) * 12000);
-    const payback = Math.max(8, Math.round(450000 / (savings / 12)));
-    setResults({ savings, payback });
-  };
 
   return (
     <div className="overlay">
@@ -69,7 +57,7 @@ const Overlay = ({ language, onOpenDossier }) => {
             <span className="reveal-text" style={{ animationDelay: '0.2s' }}>{t.problem.desc}</span>
           </p>
           
-          <div className="roi-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+          <div className="roi-grid">
             <div className="roi-card">
               <div className="roi-title">{t.problem.legal_risk}</div>
               <div className="roi-value" style={{ color: '#ff4444', fontSize: '1.5rem' }}>{t.problem.risk_status}</div>
@@ -146,7 +134,7 @@ const Overlay = ({ language, onOpenDossier }) => {
             <span className="reveal-text" style={{ animationDelay: '0.2s' }}>{t.tech3.desc}</span>
           </p>
 
-          <div className="roi-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+          <div className="roi-grid">
             <div className="roi-card">
               <div className="roi-title">{t.tech3.status}</div>
               <div className="roi-value gold" style={{ fontSize: '1.8rem' }}>{t.tech3.active}</div>
@@ -284,7 +272,7 @@ const Overlay = ({ language, onOpenDossier }) => {
 
       {/* ══ SECTION 7: CTA ═══════════════════════════════════════════════ */}
       <section className="cta decision-section">
-        <div className="content center cta-content decision-content" style={{ maxWidth: '800px' }}>
+        <div className="content center cta-content decision-content">
           <GlassInfoPanel variant="cta" className="decision-panel">
           <div className="section-tag center-tag reveal-container">
             <span className="reveal-text">{t.cta.tag}</span>
@@ -310,50 +298,49 @@ const Overlay = ({ language, onOpenDossier }) => {
       </section>
 
       {/* ══ SECTION 7: STRATEGIC IMPACT (REPLACED ROI) ═════════════════════ */}
-      <section className="strategic-impact-section" style={{paddingBottom: '100px'}}>
+      <section className="strategic-impact-section">
         <div className="content wide center">
           <GlassInfoPanel variant="cta">
-            <span className="section-tag center-tag">STRATEJİK ETKİ SENARYOLARI</span>
-            <h2 className="center-h2">YATIRIMIN SOMUT KARŞILIĞI</h2>
-            <p className="center-p">Rakamlarla boğulmayın. Tesis tipinize göre KAFM ORIGIN'in yarattığı değişimi inceleyin.</p>
-
+            <span className="section-tag center-tag">{t.impact.tag}</span>
+            <h2 className="center-h2">{t.impact.title}</h2>
+            <p className="center-p">{t.impact.desc}</p>
             <div className="impact-scenarios-grid">
               <div className="scenario-card">
                 <div className="scenario-icon">🏢</div>
-                <h3>PLAZA / OFİS</h3>
-                <div className="scenario-value">-%92</div>
-                <p>Hukuki Risk Azalımı</p>
+                <h3>{t.impact.office.title}</h3>
+                <div className="scenario-value">{t.impact.office.value}</div>
+                <p>{t.impact.office.label}</p>
                 <div className="scenario-stats">
-                  <span>Prestij Odaklı</span>
-                  <span>Düşük Bakım</span>
+                  <span>{t.impact.office.stat1}</span>
+                  <span>{t.impact.office.stat2}</span>
                 </div>
               </div>
 
               <div className="scenario-card featured">
                 <div className="scenario-icon">🛍️</div>
-                <h3>AVM / HAVALİMANI</h3>
-                <div className="scenario-value">-%99</div>
-                <p>Kaza/Kayma Önleme</p>
+                <h3>{t.impact.mall.title}</h3>
+                <div className="scenario-value">{t.impact.mall.value}</div>
+                <p>{t.impact.mall.label}</p>
                 <div className="scenario-stats">
-                  <span>Yüksek Trafik Gücü</span>
-                  <span>7/24 Aktif Koruma</span>
+                  <span>{t.impact.mall.stat1}</span>
+                  <span>{t.impact.mall.stat2}</span>
                 </div>
               </div>
 
               <div className="scenario-card">
                 <div className="scenario-icon">🏨</div>
-                <h3>OTEL / RESORT</h3>
-                <div className="scenario-value">A+</div>
-                <p>Müşteri Deneyimi Skoru</p>
+                <h3>{t.impact.hotel.title}</h3>
+                <div className="scenario-value">{t.impact.hotel.value}</div>
+                <p>{t.impact.hotel.label}</p>
                 <div className="scenario-stats">
-                  <span>Maksimum Hijyen</span>
-                  <span>Sessiz Operasyon</span>
+                  <span>{t.impact.hotel.stat1}</span>
+                  <span>{t.impact.hotel.stat2}</span>
                 </div>
               </div>
             </div>
 
             <div className="strategic-footer-note">
-              * Veriler, 12 aylık saha operasyonu ve pilot uygulama sonuçlarına dayanan tahmini değerlerdir.
+              {t.impact.footer}
             </div>
           </GlassInfoPanel>
         </div>

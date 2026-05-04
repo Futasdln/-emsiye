@@ -14,6 +14,15 @@ export const translations = {
     cta: { vitrinTrigger: "GÖRSEL VİTRİNİ KEŞFET", vitrinTitle: "BİR SANAT ESERİ: KAFM ORIGIN", tag: "KARAR ANI", title: "RİSKİ DURDURUN. MASRAFA DÖNÜŞMESİN.", desc: "KAFM ORIGIN, girişlerdeki kazaları önceden engelleyerek tesisinizi ve bütçenizi korumak için geliştirildi.", primaryButton: "ÜCRETSİZ RİSK ANALİZİ TALEP ET", secondaryButton: "DOSYAYI İNCELE", global: "DÜNYA STANDARDI", efficiency: "YÜKSEK TASARRUF", maintenance: "DÜŞÜK BAKIM" },
     investmentDossier: { badge: "YATIRIM ANALİZİ · GİZLİ", title: "KAFM ORIGIN RISK & ROI BRIEF", subtitle: "Tesis-özel giriş risk ve finansal etki değerlendirmesi.", technicalTitle: "TEKNİK ÇEKİRDEK", coreLabel: "Core", coreValue: "120.000 RPM Jet-Flow", opticsLabel: "Optik Katman", opticsValue: "Borosilikat Kristal", defenseLabel: "Risk-Kontrol Katmanı", defenseValue: "UV-C destekli hijyen koruması", analysisTitle: "YATIRIM SENARYOSU", roiLabel: "ROI", roiValue: "340%", paybackLabel: "Geri Dönüş", paybackValue: "14 AY", savePdf: "PDF OLARAK KAYDET", close: "Kapat", confidentiality: "Bu doküman gizli ticari değerlendirme içerir.", assumptionNote: "Not: ROI ve geri dönüş süresi tesis verilerine göre varsayım bazlı modellenir." },
     form: { title: "Analiz Dosyasına Erişin", name: "Ad Soyad", email: "E-posta", company: "Şirket / Tesis", submit: "Dosyayı Aç ve Yazdır" },
+    impact: {
+      tag: "STRATEJİK ETKİ SENARYOLARI",
+      title: "YATIRIMIN SOMUT KARŞILIĞI",
+      desc: "Rakamlarla boğulmayın. Tesis tipinize göre KAFM ORIGIN'in yarattığı değişimi inceleyin.",
+      footer: "* Veriler, 12 aylık saha operasyonu ve pilot uygulama sonuçlarına dayanan tahmini değerlerdir.",
+      office: { title: "PLAZA / OFİS", value: "-%92", label: "Hukuki Risk Azalımı", stat1: "Prestij Odaklı", stat2: "Düşük Bakım" },
+      mall: { title: "AVM / HAVALİMANI", value: "-%99", label: "Kaza/Kayma Önleme", stat1: "Yüksek Trafik Gücü", stat2: "7/24 Aktif Koruma" },
+      hotel: { title: "OTEL / RESORT", value: "A+", label: "Müşteri Deneyimi Skoru", stat1: "Maksimum Hijyen", stat2: "Sessiz Operasyon" }
+    },
     calculator: { title: "ROI HESAPLAYICI", subtitle: "Tesis verilerinizi girerek yıllık tasarruf potansiyelini görün.", visitors: "Günlük Ziyaretçi", rainyDays: "Yıllık Yağışlı Gün", calculate: "HESAPLA", savingsLabel: "Yıllık Tahmini Tasarruf", paybackLabel: "Yatırım Geri Dönüşü", currency: "₺", unit: "AY" }
   },
   en: {
@@ -31,6 +40,15 @@ export const translations = {
     cta: { vitrinTrigger: "EXPLORE VISUAL SHOWCASE", vitrinTitle: "A WORK OF ART: KAFM ORIGIN", tag: "DECISION MOMENT", title: "CONTROL THE RISK BEFORE IT BECOMES A COST.", desc: "KAFM ORIGIN is designed to make wet-floor exposure at commercial entrances visible, modelable and manageable.", primaryButton: "REQUEST FACILITY RISK ANALYSIS", secondaryButton: "VIEW CFO BRIEF", global: "GLOBAL STANDARD", efficiency: "OPERATIONAL EFFICIENCY", maintenance: "LOW MAINTENANCE LOAD" },
     investmentDossier: { badge: "INVESTMENT ANALYSIS · CONFIDENTIAL", title: "KAFM ORIGIN RISK & ROI BRIEF", subtitle: "Facility-specific entrance risk and financial impact positioning.", technicalTitle: "TECHNICAL CORE", coreLabel: "Core", coreValue: "120,000 RPM Jet-Flow", opticsLabel: "Optical Layer", opticsValue: "Borosilicate Crystal", defenseLabel: "Risk-Control Layer", defenseValue: "UV-C supported hygiene protection", analysisTitle: "INVESTMENT SCENARIO", roiLabel: "ROI", roiValue: "340%", paybackLabel: "Payback", paybackValue: "14 MO", savePdf: "SAVE AS PDF", close: "Close", confidentiality: "This document contains confidential commercial evaluation data.", assumptionNote: "Note: ROI and payback period are modeled with facility-specific assumptions." },
     form: { title: "Access Analysis Dossier", name: "Full Name", email: "Email", company: "Company / Facility", submit: "Open & Print Dossier" },
+    impact: {
+      tag: "STRATEGIC IMPACT SCENARIOS",
+      title: "TANGIBLE INVESTMENT VALUE",
+      desc: "Don't get lost in numbers. Explore the change KAFM ORIGIN creates for your facility type.",
+      footer: "* Data based on estimated values from 12-month field operations and pilot applications.",
+      office: { title: "PLAZA / OFFICE", value: "-92%", label: "Legal Risk Reduction", stat1: "Prestige Oriented", stat2: "Low Maintenance" },
+      mall: { title: "MALL / AIRPORT", value: "-99%", label: "Accident Prevention", stat1: "High Traffic Power", stat2: "24/7 Active Protection" },
+      hotel: { title: "HOTEL / RESORT", value: "A+", label: "Guest Experience Score", stat1: "Maximum Hygiene", stat2: "Silent Operation" }
+    },
     calculator: { title: "ROI CALCULATOR", subtitle: "Enter facility data to see annual saving potential.", visitors: "Daily Visitors", rainyDays: "Annual Rainy Days", calculate: "CALCULATE", savingsLabel: "Estimated Annual Savings", paybackLabel: "Investment Payback", currency: "$", unit: "MO" }
   },
   de: {
@@ -48,6 +66,15 @@ export const translations = {
     cta: { vitrinTrigger: "BILDER-VİTRİNE ENTDECKEN", vitrinTitle: "EIN KUNSTWERK: KAFM ORIGIN", tag: "ENTSCHEIDUNGSMOMENT", title: "KONTROLLIEREN SIE DAS RISIKO, BEVOR ES ZU KOSTEN WIRD.", desc: "KAFM ORIGIN wurde entwickelt, um die Exposition gegenüber nassen Böden an gewerblichen Eingängen sichtbar, modellierbar und verwaltbar zu machen.", primaryButton: "STANDORT-RISIKOANALYSE ANFORDERN", secondaryButton: "CFO-BRIEF ANSEHEN", global: "GLOBALER STANDARD", efficiency: "OPERATIVE EFFIZIENZ", maintenance: "GERINGE WARTUNGSLAST" },
     investmentDossier: { badge: "INVESTITIONSANALYSE · VERTRAULICH", title: "KAFM ORIGIN RISK & ROI BRIEF", subtitle: "Anlagenspezifische Eingangsrisiko- und Finanzauswirkungspositionierung.", technicalTitle: "TECHNISCHER KERN", coreLabel: "Core", coreValue: "120.000 U/min Jet-Flow", opticsLabel: "Optische Schicht", opticsValue: "Borosilikatkristall", defenseLabel: "Risikokontrollschicht", defenseValue: "UV-C unterstützter Hygieneschutz", analysisTitle: "INVESTITIONSSZENARIO", roiLabel: "ROI", roiValue: "340%", paybackLabel: "Amortisation", paybackValue: "14 MON", savePdf: "ALS PDF SPEICHERN", close: "Schliessen", confidentiality: "Dieses Dokument enthält vertrauliche kommerzielle Bewertungsdaten.", assumptionNote: "Hinweis: ROI und Amortisationszeitraum werden mit anlagenspezifischen Annahmen modelliert." },
     form: { title: "Zugriff auf Analysedossier", name: "Name", email: "E-Mail", company: "Firma / Anlage", submit: "Dossier öffnen & drucken" },
+    impact: {
+      tag: "STRATEGISCHE AUSWIRKUNGSSZENARIEN",
+      title: "KONKRETER INVESTITIONSWERT",
+      desc: "Verlieren Sie sich nicht in Zahlen. Entdecken Sie die Veränderungen, die KAFM ORIGIN für Ihren Anlagentyp bewirkt.",
+      footer: "* Die Daten basieren auf geschätzten Werten aus 12-monatigen Feldeinsätzen und Pilotanwendungen.",
+      office: { title: "BÜRO / PLAZA", value: "-92%", label: "Rechtliche Risikominderung", stat1: "Prestigeorientiert", stat2: "Geringe Wartung" },
+      mall: { title: "EINKAUFSZENTRUM / FLUGHAFEN", value: "-99%", label: "Unfallverhütung", stat1: "Hohe Verkehrskapazität", stat2: "24/7 Aktiver Schutz" },
+      hotel: { title: "HOTEL / RESORT", value: "A+", label: "Gästeerlebnis-Score", stat1: "Maximale Hygiene", stat2: "Geräuscharmer Betrieb" }
+    },
     calculator: { title: "ROI-RECHNER", subtitle: "Geben Sie Ihre Anlagendaten ein, um das jährliche Einsparpotenzial zu sehen.", visitors: "Tägliche Besucher", rainyDays: "Jährliche Regentage", calculate: "BERECHNEN", savingsLabel: "Geschätzte Ersparnis", paybackLabel: "Amortisationszeit", currency: "€", unit: "MON" }
   },
   fr: {
@@ -65,6 +92,15 @@ export const translations = {
     cta: { vitrinTrigger: "EXPLORER LA VITRINE", vitrinTitle: "UNE OEUVRE D'ART : KAFM ORIGIN", tag: "MOMENT DE DÉCISION", title: "CONTRÔLEZ LE RISQUE AVANT QU'IL NE DEVIENNE UN COÛT.", desc: "KAFM ORIGIN est conçu pour rendre l'exposition aux sols mouillés aux entrées commerciales visible, modélisable et gérable.", primaryButton: "DEMANDER UNE ANALYSE DE RISQUE", secondaryButton: "VOIR LE BRIEF DU CFO", global: "STANDARD MONDIAL", efficiency: "EFFICACITÉ OPÉRATIONNELLE", maintenance: "FAIBLE CHARGE DE MAINTENANCE" },
     investmentDossier: { badge: "ANALYSE D'INVESTISSEMENT · CONFIDENTIEL", title: "KAFM ORIGIN RISK & ROI BRIEF", subtitle: "Positionnement du risque d'entrée et de l'impact financier spécifique à l'installation.", technicalTitle: "CŒUR TECHNIQUE", coreLabel: "Core", coreValue: "120 000 tr/min Jet-Flow", opticsLabel: "Couche Optique", opticsValue: "Cristal Borosilicaté", defenseLabel: "Couche de Contrôle des Risques", defenseValue: "Protection hygiénique assistée par UV-C", analysisTitle: "SCÉNARIO D'INVESTISSEMENT", roiLabel: "ROI", roiValue: "340%", paybackLabel: "Récupération", paybackValue: "14 MOIS", savePdf: "ENREGISTRER EN PDF", close: "Fermer", confidentiality: "Ce document contient des données d'évaluation commerciale confidentielles.", assumptionNote: "Note : Le ROI et la période de récupération sont modélisés avec des hypothèses spécifiques à l'installation." },
     form: { title: "Accéder au Dossier d'Analyse", name: "Nom complet", email: "E-mail", company: "Entreprise / Installation", submit: "Ouvrir & Imprimer le Dossier" },
+    impact: {
+      tag: "SCÉNARIOS D'IMPACT STRATÉGIQUE",
+      title: "VALEUR D'INVESTISSEMENT TANGIBLE",
+      desc: "Ne vous perdez pas dans les chiffres. Explorez le changement que KAFM ORIGIN crée pour votre type d'établissement.",
+      footer: "* Données basées sur des valeurs estimées issues de 12 mois d'opérations sur le terrain et d'applications pilotes.",
+      office: { title: "PLAZA / BUREAU", value: "-92%", label: "Réduction du Risque Juridique", stat1: "Orienté Prestige", stat2: "Faible Maintenance" },
+      mall: { title: "CENTRE COMMERCIAL / AÉROPORT", value: "-99%", label: "Prévention des Accidents", stat1: "Puissance de Trafic Élevée", stat2: "Protection Active 24/7" },
+      hotel: { title: "HÔTEL / RESORT", value: "A+", label: "Score d'Expérience Client", stat1: "Hygiène Maximale", stat2: "Opération Silencieuse" }
+    },
     calculator: { title: "CALCULATEUR DE ROI", subtitle: "Entrez les données de votre installation pour voir le potentiel d'économies annuelles.", visitors: "Visiteurs quotidiens", rainyDays: "Jours de pluie par an", calculate: "CALCULER", savingsLabel: "Économies estimées", paybackLabel: "Période de récupération", currency: "€", unit: "MOIS" }
   },
   zh: {
@@ -82,6 +118,15 @@ export const translations = {
     cta: { vitrinTrigger: "探索视觉展示", vitrinTitle: "一件艺术品：KAFM ORIGIN", tag: "决策时刻", title: "在风险变成成本之前控制它。", desc: "KAFM ORIGIN 旨在使商业入口的湿滑地面暴露情况可见、可建模且可管理。", primaryButton: "请求设施风险分析", secondaryButton: "查看 CFO 简报", global: "全球标准", efficiency: "运营效率", maintenance: "低维护负载" },
     investmentDossier: { badge: "投资分析 · 机密", title: "KAFM ORIGIN 风险与投资回报率简报", subtitle: "特定设施的入口风险和财务影响定位。", technicalTitle: "技术核心", coreLabel: "核心", coreValue: "120,000 RPM 喷射流", opticsLabel: "光学层", opticsValue: "硼硅酸盐水晶", defenseLabel: "风险控制层", defenseValue: "UV-C 辅助卫生防护", analysisTitle: "投资方案", roiLabel: "ROI", roiValue: "340%", paybackLabel: "回收期", paybackValue: "14 个月", savePdf: "保存为 PDF", close: "关闭", confidentiality: "本文件包含机密商业评估数据。", assumptionNote: "注：投资回报率和回收期是根据特定设施的假设建模的。" },
     form: { title: "获取分析档案", name: "姓名", email: "电子邮件", company: "公司 / 设施", submit: "打开并打印档案" },
+    impact: {
+      tag: "战略影响情景",
+      title: "切实可见的投资价值",
+      desc: "不要迷失在数字中。探索 KAFM ORIGIN 为您的设施类型带来的改变。",
+      footer: "* 数据基于 12 个月的现场运营和试点应用得出的估计值。",
+      office: { title: "广场 / 办公楼", value: "-92%", label: "法律风险降低", stat1: "声望导向", stat2: "低维护" },
+      mall: { title: "商场 / 机场", value: "-99%", label: "事故预防", stat1: "高客流处理能力", stat2: "24/7 主动防护" },
+      hotel: { title: "酒店 / 度假村", value: "A+", label: "宾客体验评分", stat1: "最高卫生标准", stat2: "静音运行" }
+    },
     calculator: { title: "ROI 计算器", subtitle: "输入您的设施数据以查看年度潜在节省。", visitors: "每日访客", rainyDays: "年度降雨天数", calculate: "计算", savingsLabel: "预计节省", paybackLabel: "回收期", currency: "¥", unit: "月" }
   }
 };
