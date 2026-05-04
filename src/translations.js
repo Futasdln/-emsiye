@@ -20,8 +20,8 @@ export const translations = {
       title: "YATIRIMIN SOMUT KARŞILIĞI",
       desc: "Rakamlarla boğulmayın. Tesis tipinize göre KAFM ORIGIN'in yarattığı değişimi inceleyin.",
       footer: "* Veriler, 12 aylık saha operasyonu ve pilot uygulama sonuçlarına dayanan tahmini değerlerdir.",
-      office: { title: "PLAZA / OFİS", value: "-%92", label: "Hukuki Risk Azalımı", stat1: "Prestij Odaklı", stat2: "Düşük Bakım" },
-      mall: { title: "AVM / HAVALİMANI", value: "-%99", label: "Kaza/Kayma Önleme", stat1: "Yüksek Trafik Gücü", stat2: "7/24 Aktif Koruma" },
+      office: { title: "PLAZA / OFİS", value: "%92", label: "Hukuki Risk Azalımı", stat1: "Prestij Odaklı", stat2: "Düşük Bakım" },
+      mall: { title: "AVM / HAVALİMANI", value: "%99", label: "Kaza/Kayma Önleme", stat1: "Yüksek Trafik Gücü", stat2: "7/24 Aktif Koruma" },
       hotel: { title: "OTEL / RESORT", value: "A+", label: "Müşteri Deneyimi Skoru", stat1: "Maksimum Hijyen", stat2: "Sessiz Operasyon" }
     },
     calculator: { title: "ROI HESAPLAYICI", subtitle: "Tesis verilerinizi girerek yıllık tasarruf potansiyelini görün.", visitors: "Günlük Ziyaretçi", rainyDays: "Yıllık Yağışlı Gün", calculate: "HESAPLA", savingsLabel: "Yıllık Tahmini Tasarruf", paybackLabel: "Yatırım Geri Dönüşü", currency: "₺", unit: "AY" }
@@ -47,8 +47,8 @@ export const translations = {
       title: "TANGIBLE INVESTMENT VALUE",
       desc: "Don't get lost in numbers. Explore the change KAFM ORIGIN creates for your facility type.",
       footer: "* Data based on estimated values from 12-month field operations and pilot applications.",
-      office: { title: "PLAZA / OFFICE", value: "-92%", label: "Legal Risk Reduction", stat1: "Prestige Oriented", stat2: "Low Maintenance" },
-      mall: { title: "MALL / AIRPORT", value: "-99%", label: "Accident Prevention", stat1: "High Traffic Power", stat2: "24/7 Active Protection" },
+      office: { title: "PLAZA / OFFICE", value: "92%", label: "Legal Risk Reduction", stat1: "Prestige Oriented", stat2: "Low Maintenance" },
+      mall: { title: "MALL / AIRPORT", value: "99%", label: "Accident Prevention", stat1: "High Traffic Power", stat2: "24/7 Active Protection" },
       hotel: { title: "HOTEL / RESORT", value: "A+", label: "Guest Experience Score", stat1: "Maximum Hygiene", stat2: "Silent Operation" }
     },
     calculator: { title: "ROI CALCULATOR", subtitle: "Enter facility data to see annual saving potential.", visitors: "Daily Visitors", rainyDays: "Annual Rainy Days", calculate: "CALCULATE", savingsLabel: "Estimated Annual Savings", paybackLabel: "Investment Payback", currency: "$", unit: "MO" }
