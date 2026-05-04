@@ -1639,6 +1639,18 @@ p {
   }
 }
 
+.business-section {
+  background: rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .business-section {
+    min-height: 100vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
 .image-error .image-placeholder {
   color: var(--accent);
 }

@@ -60,23 +60,23 @@ const Overlay = ({ language, onOpenDossier }) => {
           <div className="roi-grid">
             <div className="roi-card">
               <div className="roi-title">{t.problem.legal_risk}</div>
-              <div className="roi-value" style={{ color: '#ff4444', fontSize: '1.5rem' }}>{t.problem.risk_status}</div>
-              <div className="roi-sub">{t.problem.risk_title}</div>
+              <div className="roi-value" style={{ color: '#ff4444', fontSize: '1.8rem' }}>{t.problem.legal_val}</div>
+              <div className="roi-sub">{t.problem.legal_sub}</div>
             </div>
             <div className="roi-card">
-              <div className="roi-title">{t.problem.complaints}</div>
-              <div className="roi-value" style={{ color: '#ff8800', fontSize: '1.5rem' }}>{t.problem.risk_status}</div>
-              <div className="roi-sub">{t.problem.risk_desc}</div>
+              <div className="roi-title">{t.problem.brand_risk}</div>
+              <div className="roi-value" style={{ color: '#ff8800', fontSize: '1.8rem' }}>{t.problem.brand_val}</div>
+              <div className="roi-sub">{t.problem.brand_sub}</div>
             </div>
             <div className="roi-card">
-              <div className="roi-title">{t.problem.risk_title}</div>
-              <div className="roi-value" style={{ color: '#ff8800', fontSize: '1.5rem' }}>{t.problem.risk_status}</div>
-              <div className="roi-sub">{t.problem.risk_desc}</div>
+              <div className="roi-title">{t.problem.operational_risk}</div>
+              <div className="roi-value" style={{ color: '#ffcc00', fontSize: '1.8rem' }}>{t.problem.operational_val}</div>
+              <div className="roi-sub">{t.problem.operational_sub}</div>
             </div>
             <div className="roi-card">
-              <div className="roi-title">{t.problem.risk_title}</div>
-              <div className="roi-value" style={{ color: '#ff4444', fontSize: '1.5rem' }}>{t.problem.risk_status}</div>
-              <div className="roi-sub">{t.problem.risk_desc}</div>
+              <div className="roi-title">{t.problem.insurance_risk}</div>
+              <div className="roi-value" style={{ color: '#ff4444', fontSize: '1.8rem' }}>{t.problem.insurance_val}</div>
+              <div className="roi-sub">{t.problem.insurance_sub}</div>
             </div>
           </div>
           </GlassInfoPanel>
@@ -267,6 +267,32 @@ const Overlay = ({ language, onOpenDossier }) => {
             />
           </div>
           </GlassInfoPanel>
+        </div>
+      </section>
+
+      {/* ══ SECTION 6: BUSINESS & MARKET ═══════════════════════════════════ */}
+      <section className="business-section">
+        <div className="content center">
+          <div className="section-tag center-tag">{t.business.tag}</div>
+          <h2 className="center-h2">{t.business.title}</h2>
+          
+          <div className="metric-grid">
+            <MetricCard 
+              label={t.business.tam_desc}
+              value={t.business.tam}
+              caption="GLOBAL MARKET"
+            />
+            <MetricCard 
+              label={t.business.margin_desc}
+              value={t.business.margin}
+              caption="GROSS MARGIN"
+            />
+            <MetricCard 
+              label={t.business.scale_desc}
+              value={t.business.scale}
+              caption="READY TO DEPLOY"
+            />
+          </div>
         </div>
       </section>
 

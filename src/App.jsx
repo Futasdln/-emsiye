@@ -82,7 +82,7 @@ function App() {
           dpr={[1, 2]} 
           style={{ position: 'fixed', top: 0, left: 0 }}
         >
-          <ScrollControls pages={16} damping={0.15} infinite={false}>
+          <ScrollControls pages={18} damping={0.15} infinite={false}>
             <Experience color={productColor.hex} bgColor={productColor.bg} />
             <Scroll html>
               <Overlay language={language} onOpenDossier={toggleDossier} />
