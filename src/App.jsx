@@ -34,6 +34,7 @@ function App() {
   const [productColor, setProductColor] = useState(colors[0]);
   const [showDossier, setShowDossier] = useState(false);
   const [showShowcase, setShowShowcase] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const toggleDossier = () => setShowDossier(!showDossier);
   const toggleShowcase = () => {
@@ -43,9 +44,14 @@ function App() {
   };
 
   useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
     const handleToggle = () => toggleShowcase();
     window.addEventListener('toggle-showcase', handleToggle);
-    return () => window.removeEventListener('toggle-showcase', handleToggle);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('toggle-showcase', handleToggle);
+    };
   }, [showShowcase]);
 
   return (
@@ -82,7 +88,7 @@ function App() {
           dpr={[1, 2]} 
           style={{ position: 'fixed', top: 0, left: 0 }}
         >
-          <ScrollControls pages={11} damping={0.15} infinite={false}>
+          <ScrollControls pages={isMobile ? 17 : 11} damping={0.15} infinite={false}>
             <Experience color={productColor.hex} bgColor={productColor.bg} />
             <Scroll html>
               <Overlay language={language} onOpenDossier={toggleDossier} />
