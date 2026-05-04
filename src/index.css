@@ -1640,7 +1640,7 @@ p {
 }
 
 .business-section {
-  background: rgba(0,0,0,0.2);
+  /* Removed custom background to maintain consistency */
 }
 
 @media (max-width: 768px) {
