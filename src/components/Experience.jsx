@@ -4,7 +4,6 @@ import { useScroll, PerspectiveCamera, Environment, ContactShadows, Html } from 
 import * as THREE from 'three'
 import Product from './Product'
 import Rain from './Rain'
-import { translations } from '../translations'
 
 // Kamera keyframe'leri
 const KF = [
