@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react'
+import React, { Suspense, useState, useCallback, memo } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { ScrollControls, Scroll } from '@react-three/drei'
 import Experience from './components/Experience'
@@ -29,40 +29,86 @@ const colors = [
   { id: 'gold',   hex: '#b5935b', bg: '#100a00', label: 'Gold' }
 ];
 
-function App() {
-  const [language, setLanguage] = useState('tr');
-  const [productColor, setProductColor] = useState(colors[0]);
-  const [showDossier, setShowDossier] = useState(false);
-  const [showShowcase, setShowShowcase] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+// ── Hafif pub/sub: dil değişince sadece abone componentler render olur ──────
+const langListeners = new Set()
+export const langStore = {
+  current: 'tr',
+  subscribe: (fn) => { langListeners.add(fn); return () => langListeners.delete(fn) },
+  set: (code) => { langStore.current = code; langListeners.forEach(fn => fn(code)) }
+}
 
-  const toggleDossier = () => setShowDossier(!showDossier);
-  const toggleShowcase = () => {
-    setShowShowcase(!showShowcase);
-    // When opening showcase, we might want to disable scrolling on body
-    document.body.style.overflow = !showShowcase ? 'hidden' : 'auto';
-  };
+// Dil değişimine abone olan hook — sadece bunu kullanan component render olur
+function useLang() {
+  const [lang, setLang] = useState(langStore.current)
+  useEffect(() => langStore.subscribe(setLang), [])
+  return lang
+}
+
+// ── Canvas içeriği memo ile sarılmış — dil değişince RENDER OLMAZ ───────────
+const CanvasContent = memo(({ color, bgColor, pages, onOpenDossier }) => {
+  const lang = useLang()  // Overlay dili doğrudan buradan alır
+  return (
+    <ScrollControls pages={pages} damping={0.15} infinite={false}>
+      <Experience color={color} bgColor={bgColor} />
+      <Scroll html>
+        <Overlay language={lang} onOpenDossier={onOpenDossier} />
+      </Scroll>
+    </ScrollControls>
+  )
+})
+
+// ── Modal'lar da kendi dilini dinler ─────────────────────────────────────────
+const DossierModal = memo(({ onClose }) => {
+  const lang = useLang()
+  return <InvestmentDossier language={lang} onClose={onClose} />
+})
+
+const ShowcaseModal = memo(({ onClose }) => {
+  const lang = useLang()
+  return <ShowcaseGallery language={lang} onClose={onClose} />
+})
+
+function App() {
+  const [activeLang, setActiveLang] = useState('tr')
+  const [productColor, setProductColor] = useState(colors[0])
+  const [showDossier, setShowDossier] = useState(false)
+  const [showShowcase, setShowShowcase] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+
+  const handleLangChange = useCallback((code) => {
+    langStore.set(code)   // Canvas'ı yeniden mount ETMİYOR
+    setActiveLang(code)   // Sadece lang-switcher butonlarını günceller
+  }, [])
+
+  const toggleDossier = useCallback(() => setShowDossier(prev => !prev), [])
+  const toggleShowcase = useCallback(() => {
+    setShowShowcase(prev => {
+      const next = !prev
+      document.body.style.overflow = next ? 'hidden' : 'auto'
+      return next
+    })
+  }, [])
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', handleResize);
-    const handleToggle = () => toggleShowcase();
-    window.addEventListener('toggle-showcase', handleToggle);
+    const handleResize = () => setIsMobile(window.innerWidth <= 768)
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('toggle-showcase', toggleShowcase)
     return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('toggle-showcase', handleToggle);
-    };
-  }, [showShowcase]);
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('toggle-showcase', toggleShowcase)
+    }
+  }, [toggleShowcase])
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
+      {/* UI Kontrolleri — Canvas dışında */}
       <div className="ui-container">
         <div className="lang-switcher">
           {langs.map(l => (
-            <button 
-              key={l.code} 
-              className={`lang-btn ${language === l.code ? 'active' : ''}`}
-              onClick={() => setLanguage(l.code)}
+            <button
+              key={l.code}
+              className={`lang-btn ${activeLang === l.code ? 'active' : ''}`}
+              onClick={() => handleLangChange(l.code)}
             >
               {l.label}
             </button>
@@ -82,23 +128,24 @@ function App() {
         </div>
       </div>
 
+      {/* Canvas — productColor değişmediği sürece yeniden mount OLMAZ */}
       <Suspense fallback={<Loader />}>
-        <Canvas 
-          shadows 
-          dpr={[1, 2]} 
+        <Canvas
+          shadows
+          dpr={[1, 2]}
           style={{ position: 'fixed', top: 0, left: 0 }}
         >
-          <ScrollControls pages={isMobile ? 17 : 11} damping={0.15} infinite={false}>
-            <Experience color={productColor.hex} bgColor={productColor.bg} />
-            <Scroll html>
-              <Overlay language={language} onOpenDossier={toggleDossier} />
-            </Scroll>
-          </ScrollControls>
+          <CanvasContent
+            color={productColor.hex}
+            bgColor={productColor.bg}
+            pages={isMobile ? 17 : 11}
+            onOpenDossier={toggleDossier}
+          />
         </Canvas>
       </Suspense>
 
-      {showDossier && <InvestmentDossier language={language} onClose={toggleDossier} />}
-      {showShowcase && <ShowcaseGallery language={language} onClose={toggleShowcase} />}
+      {showDossier && <DossierModal onClose={toggleDossier} />}
+      {showShowcase && <ShowcaseModal onClose={toggleShowcase} />}
     </div>
   )
 }
